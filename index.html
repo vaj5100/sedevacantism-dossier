@@ -97,6 +97,19 @@ blockquote {
   margin: 1.2rem 0; padding: .6rem 1.2rem; border-left: 3px solid var(--rubric);
   background: var(--paper-2); border-radius: 0 6px 6px 0; color: var(--ink);
 }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 .7rem; }
+.pair blockquote { margin: 0; font-size: .95em; }
+.pair .pre { border-left-color: #2f5e8c; }
+.pair .post { border-left-color: var(--rubric); }
+.pair blockquote > p:first-child > strong:first-child { display: inline-block; font-family: var(--sans); font-size: 11px;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-right: .2em; }
+.pair .pre > p:first-child > strong:first-child { color: #2f5e8c; }
+.pair .post > p:first-child > strong:first-child { color: var(--rubric); }
+p.verdict { background: var(--gold-soft); border-left: 3px solid var(--gold); padding: .6rem .9rem; border-radius: 0 6px 6px 0; margin: 0 0 1.6rem; }
+@media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pair .pre { border-left-color: #8fb4dc; } :root:not([data-theme="light"]) .pair .pre > p:first-child > strong:first-child { color: #8fb4dc; } }
+:root[data-theme="dark"] .pair .pre { border-left-color: #8fb4dc; }
+:root[data-theme="dark"] .pair .pre > p:first-child > strong:first-child { color: #8fb4dc; }
 blockquote p { margin: .4rem 0; }
 blockquote em { font-style: italic; }
 
@@ -166,9 +179,9 @@ footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule
   <a class="brand" href="#top"><div class="cross">✠</div><strong>The Case for Sedevacantism</strong><span>Research dossier</span></a>
   <input class="search" type="search" placeholder="Search the dossier…" aria-label="Search the dossier">
   <p class="no-hits">No matches.</p>
-  <div class="toc"><ol><li><a href="#argument-skeleton">Argument skeleton</a></li><li><a href="#i-religious-liberty">I. Religious Liberty</a><ol><li><a href="#pre-1958-doctrine">Pre-1958 doctrine</a></li><li><a href="#vatican-ii-dignitatis-humanae-vaticanva-verified">Vatican II — Dignitatis Humanae (vatican.va, verified)</a></li><li><a href="#the-contradiction-point-by-point">The contradiction, point by point</a></li><li><a href="#admissions-from-non-sedevacantists-useful">Admissions from non-sedevacantists (useful)</a></li><li><a href="#counter-arguments-you-must-answer">Counter-arguments you must answer</a></li></ol></li><li><a href="#ii-ecumenism-the-one-true-church">II. Ecumenism / the One True Church</a><ol><li><a href="#pre-1958-doctrine-1">Pre-1958 doctrine</a></li><li><a href="#post-conciliar-texts-all-vaticanva-unless-noted">Post-conciliar texts (all vatican.va unless noted)</a></li><li><a href="#the-contradictions">The contradictions</a></li><li><a href="#counter-arguments">Counter-arguments</a></li></ol></li><li><a href="#iii-doubtfulness-of-the-1968-episcopal-consecration-rite">III. Doubtfulness of the 1968 Episcopal Consecration Rite</a><ol><li><a href="#the-two-forms">The two forms</a></li><li><a href="#governing-principles">Governing principles</a></li><li><a href="#the-sedevacantist-case-fr-anthony-cekada">The sedevacantist case — Fr. Anthony Cekada</a></li><li><a href="#counter-arguments-fr-pierre-marie-op-sspx-le-sel-de-la-terre-54-2005">Counter-arguments — Fr. Pierre-Marie OP (SSPX, Le Sel de la Terre 54, 2005)</a></li><li><a href="#sspx-concessions-you-can-cite-they-establish-positive-doubt">SSPX concessions you can cite (they establish positive doubt)</a></li></ol></li><li><a href="#iv-synthesis-why-the-novus-ordo-is-a-new-religion">IV. Synthesis — Why the Novus Ordo Is a New Religion</a><ol><li><a href="#1-the-framework-bellarmines-three-bonds">1. The framework: Bellarmine&#x27;s three bonds</a></li><li><a href="#2-the-bridge-principle-worship-professes-faith">2. The bridge principle: worship professes faith</a></li><li><a href="#3-bond-one-a-new-profession-of-faith">3. Bond one — a new profession of faith</a></li><li><a href="#4-bond-two-new-sacraments-new-worship">4. Bond two — new sacraments, new worship</a></li><li><a href="#5-bond-three-new-pastors-a-new-church">5. Bond three — new pastors, a new Church</a></li><li><a href="#6-conclusion-of-the-section">6. Conclusion of the section</a></li><li><a href="#7-counter-arguments-for-this-section">7. Counter-arguments for this section</a></li><li><a href="#dont-use-these-as-commonly-circulated">⚠ Don&#x27;t use these as commonly circulated</a></li></ol></li><li><a href="#v-una-cum-the-mass-as-public-profession-of-unity-in-faith">V. Una Cum — The Mass as Public Profession of Unity in Faith</a><ol><li><a href="#a-the-eucharist-is-the-sacrament-and-sign-of-unity-in-faith">A. The Eucharist is the sacrament and sign of unity in faith</a></li><li><a href="#b-the-una-cum-clause-who-is-named-and-what-naming-means">B. The una cum clause — who is named, and what naming means</a></li><li><a href="#c-the-argument">C. The argument</a></li><li><a href="#d-the-post-conciliar-contradiction-the-sign-of-unity-given-to-those-outside-it">D. The post-conciliar contradiction: the sign of unity given to those outside it</a></li><li><a href="#e-counter-arguments-including-disagreement-among-sedevacantists">E. Counter-arguments (including disagreement among sedevacantists)</a></li><li><a href="#citation-cautions-for-this-section">⚠ Citation cautions for this section</a></li></ol></li><li><a href="#vi-the-visibility-of-the-church-the-main-objection-and-the-answers">VI. The Visibility of the Church — The Main Objection, and the Answers</a><ol><li><a href="#a-what-the-doctrine-requires-and-what-it-does-not">A. What the doctrine requires — and what it does not</a></li><li><a href="#b-the-objection-at-full-strength">B. The objection at full strength</a></li><li><a href="#c-the-answers">C. The answers</a></li><li><a href="#d-what-the-thesis-must-concede">D. What the thesis must concede</a></li><li><a href="#e-recommended-thesis-position">E. Recommended thesis position</a></li><li><a href="#citation-cautions-for-this-section-1">⚠ Citation cautions for this section</a></li></ol></li><li><a href="#verification-backlog-before-citing-in-the-thesis">Verification backlog (before citing in the thesis)</a></li></ol></div>
+  <div class="toc"><ol><li><a href="#argument-skeleton">Argument skeleton</a></li><li><a href="#i-religious-liberty">I. Religious Liberty</a><ol><li><a href="#side-by-side-religious-liberty-before-and-after-the-council">Side by side: religious liberty before and after the Council</a></li><li><a href="#pre-1958-doctrine">Pre-1958 doctrine</a></li><li><a href="#vatican-ii-dignitatis-humanae-vaticanva-verified">Vatican II — Dignitatis Humanae (vatican.va, verified)</a></li><li><a href="#the-contradiction-point-by-point">The contradiction, point by point</a></li><li><a href="#admissions-from-non-sedevacantists-useful">Admissions from non-sedevacantists (useful)</a></li><li><a href="#counter-arguments-you-must-answer">Counter-arguments you must answer</a></li></ol></li><li><a href="#ii-ecumenism-the-one-true-church">II. Ecumenism / the One True Church</a><ol><li><a href="#side-by-side-the-one-true-church-before-and-after-the-council">Side by side: the one true Church before and after the Council</a></li><li><a href="#pre-1958-doctrine-1">Pre-1958 doctrine</a></li><li><a href="#post-conciliar-texts-all-vaticanva-unless-noted">Post-conciliar texts (all vatican.va unless noted)</a></li><li><a href="#the-contradictions">The contradictions</a></li><li><a href="#counter-arguments">Counter-arguments</a></li></ol></li><li><a href="#iii-doubtfulness-of-the-1968-episcopal-consecration-rite">III. Doubtfulness of the 1968 Episcopal Consecration Rite</a><ol><li><a href="#side-by-side-the-rite-before-and-after-1968">Side by side: the rite before and after 1968</a></li><li><a href="#the-two-forms">The two forms</a></li><li><a href="#governing-principles">Governing principles</a></li><li><a href="#the-sedevacantist-case-fr-anthony-cekada">The sedevacantist case — Fr. Anthony Cekada</a></li><li><a href="#counter-arguments-fr-pierre-marie-op-sspx-le-sel-de-la-terre-54-2005">Counter-arguments — Fr. Pierre-Marie OP (SSPX, Le Sel de la Terre 54, 2005)</a></li><li><a href="#sspx-concessions-you-can-cite-they-establish-positive-doubt">SSPX concessions you can cite (they establish positive doubt)</a></li></ol></li><li><a href="#iv-synthesis-why-the-novus-ordo-is-a-new-religion">IV. Synthesis — Why the Novus Ordo Is a New Religion</a><ol><li><a href="#side-by-side-the-catholic-religion-before-and-after-the-council">Side by side: the Catholic religion before and after the Council</a></li><li><a href="#1-the-framework-bellarmines-three-bonds">1. The framework: Bellarmine&#x27;s three bonds</a></li><li><a href="#2-the-bridge-principle-worship-professes-faith">2. The bridge principle: worship professes faith</a></li><li><a href="#3-bond-one-a-new-profession-of-faith">3. Bond one — a new profession of faith</a></li><li><a href="#4-bond-two-new-sacraments-new-worship">4. Bond two — new sacraments, new worship</a></li><li><a href="#5-bond-three-new-pastors-a-new-church">5. Bond three — new pastors, a new Church</a></li><li><a href="#6-conclusion-of-the-section">6. Conclusion of the section</a></li><li><a href="#7-counter-arguments-for-this-section">7. Counter-arguments for this section</a></li><li><a href="#dont-use-these-as-commonly-circulated">⚠ Don&#x27;t use these as commonly circulated</a></li></ol></li><li><a href="#v-una-cum-the-mass-as-public-profession-of-unity-in-faith">V. Una Cum — The Mass as Public Profession of Unity in Faith</a><ol><li><a href="#side-by-side-the-altar-before-and-after-the-council">Side by side: the altar before and after the Council</a></li><li><a href="#a-the-eucharist-is-the-sacrament-and-sign-of-unity-in-faith">A. The Eucharist is the sacrament and sign of unity in faith</a></li><li><a href="#b-the-una-cum-clause-who-is-named-and-what-naming-means">B. The una cum clause — who is named, and what naming means</a></li><li><a href="#c-the-argument">C. The argument</a></li><li><a href="#d-the-post-conciliar-contradiction-the-sign-of-unity-given-to-those-outside-it">D. The post-conciliar contradiction: the sign of unity given to those outside it</a></li><li><a href="#e-counter-arguments-including-disagreement-among-sedevacantists">E. Counter-arguments (including disagreement among sedevacantists)</a></li><li><a href="#citation-cautions-for-this-section">⚠ Citation cautions for this section</a></li></ol></li><li><a href="#vi-the-visibility-of-the-church-the-main-objection-and-the-answers">VI. The Visibility of the Church — The Main Objection, and the Answers</a><ol><li><a href="#a-what-the-doctrine-requires-and-what-it-does-not">A. What the doctrine requires — and what it does not</a></li><li><a href="#b-the-objection-at-full-strength">B. The objection at full strength</a></li><li><a href="#c-the-answers">C. The answers</a></li><li><a href="#d-what-the-thesis-must-concede">D. What the thesis must concede</a></li><li><a href="#e-recommended-thesis-position">E. Recommended thesis position</a></li><li><a href="#citation-cautions-for-this-section-1">⚠ Citation cautions for this section</a></li></ol></li><li><a href="#verification-backlog-before-citing-in-the-thesis">Verification backlog (before citing in the thesis)</a></li></ol></div>
   <div class="side-foot">
-    <div>Updated 2026-10-18</div>
+    <div>Updated 2026-10-19</div>
     <button class="theme-btn" type="button">Toggle dark mode</button>
   </div>
 </nav>
@@ -212,6 +225,58 @@ post-1968 “bishops” — including Ratzinger, consecrated 28 May 1977 — are
 “conservative” claimant elected from them could be doubtfully a bishop.</p>
 <hr />
 </section><section class="chapter"><h2 id="i-religious-liberty">I. Religious Liberty <a class="header-anchor" href="#i-religious-liberty">§</a></h2>
+<h3 id="side-by-side-religious-liberty-before-and-after-the-council">Side by side: religious liberty before and after the Council <a class="header-anchor" href="#side-by-side-religious-liberty-before-and-after-the-council">§</a></h3>
+<p>Each pair puts a pre-conciliar text beside a post-conciliar one. All quotes are verbatim from the sources cited in this section; the standard replies are answered under “Counter-arguments you must answer” below.</p>
+<h4>I.1 Liberty of worship as a personal right written into civil law</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius IX, <em>Quanta Cura</em> §3 (1864), condemning the opinion Gregory XVI called <em>deliramentum</em> (“insanity”):<br>
+“liberty of conscience and worship is each man’s personal right, which ought to be legally proclaimed and asserted in every rightly constituted society”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Vatican II, <em>Dignitatis Humanae</em> §2 (1965):<br>
+“This right of the human person to religious freedom is to be recognized in the constitutional law whereby society is governed and thus it is to become a civil right.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the condemned proposition and the conciliar one have the same structure: a personal right to religious freedom which civil law must proclaim. <em>Their reply:</em> DH means only immunity from coercion “within due limits”, not unlimited liberty (counter-arguments 1–2).</p>
+<h4>I.2 A right given by nature</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Leo XIII, <em>Libertas</em> §42 (1888):<br>
+“it is quite unlawful to demand, to defend, or to grant unconditional freedom of thought, of speech, or writing, or of worship, as if these were so many rights given by nature to man.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Dignitatis Humanae</em> §2:<br>
+“Therefore the right to religious freedom has its foundation not in the subjective disposition of the person, but in his very nature.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Leo denies that freedom of worship is a right given by nature; DH grounds it in human nature itself, and adds “the revealed word of God” (§2). <em>Their reply:</em> Leo condemns <em>unconditional</em> freedom; DH’s right is limited by public order.</p>
+<h4>I.3 Rights for those in error</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius XII, <em>Ci Riesce</em> §V (1953):<br>
+“that which does not correspond to truth or to the norm of morality objectively has no right to exist, to be spread or to be activated.”<br>
+Leo XIII, <em>Libertas</em> §34: “it is contrary to reason that error and truth should have equal rights.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Dignitatis Humanae</em> §2:<br>
+“the right to this immunity continues to exist even in those who do not live up to their obligation of seeking the truth and adhering to it and the exercise of this right is not to be impeded, provided that just public order be observed.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> error had “no right… to be spread”; now those who do not seek or hold the truth have a right whose public exercise “is not to be impeded”. <em>Their reply:</em> the right belongs to the person, not to the error (Fr. Most, Murray).</p>
+<h4>I.4 Public worship of non-Catholic religions</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Syllabus of Errors</em>, proposition 78 (condemned, 1864):<br>
+“Hence it has been wisely decided by law, in some Catholic countries, that persons coming to reside therein shall enjoy the public exercise of their own peculiar worship.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Dignitatis Humanae</em> §4:<br>
+“Provided the just demands of public order are observed, religious communities rightfully claim freedom in order that they may govern themselves according to their own norms, honor the Supreme Being in public worship…”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the Syllabus condemns praising laws that grant non-Catholics public worship in Catholic countries; DH declares that public worship a right. Even Michael Davies, who would not call DH heretical, wrote: “One instance in which it appears impossible to deny the existence of a formal contradiction is that of Proposition 78” (quoted by Harrison, catholicculture.org recnum=9020).</p>
+<h4>I.5 The Catholic State</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Syllabus</em>, proposition 77 (condemned):<br>
+“In the present day it is no longer expedient that the Catholic religion should be held as the only religion of the State, to the exclusion of all other forms of worship.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Dignitatis Humanae</em> §6:<br>
+“If, in view of peculiar circumstances obtaining among peoples, special civil recognition is given to one religious community in the constitutional order of society, it is at the same time imperative that the right of all citizens and religious communities to religious freedom should be recognized and made effective in practice.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the Catholic State, to the exclusion of other cults, was the norm, and it was condemned to say otherwise; DH makes it an exception for “peculiar circumstances” that must still grant religious freedom to all. Applied in Spain’s 1967 law, which rewrote Article 6 of the Spanish Charter citing DH 2 (Pivarunas 1995).</p>
+<h4>I.6 The State’s duty to restrain false religion</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Quanta Cura</em> §3, condemning the view that the best society is one:<br>
+“in which no duty is recognized, as attached to the civil power, of restraining by enacted penalties, offenders against the Catholic religion, except so far as public peace may require.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Dignitatis Humanae</em> §3:<br>
+“it would clearly transgress the limits set to its power, were it to presume to command or inhibit acts that are religious.”<br>
+§7: “These matters constitute the basic component of the common welfare: they are what is meant by public order.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Pius IX condemns denying that the State has a duty to restrain offenders against the Catholic religion beyond what public peace requires; DH says the State exceeds its power if it inhibits religious acts, apart from public order. Rome’s own 1987 reply to Lefebvre admits it: the State’s duty to repress religious error “is not recognised by the Conciliar Declaration” <em>(unsigned translation; provenance to verify)</em>. <em>Their reply:</em> DH 7’s “public order” includes public morality and the rights of others, so it is broader than Pius IX’s “public peace” (Harrison).</p>
 <h3 id="pre-1958-doctrine">Pre-1958 doctrine <a class="header-anchor" href="#pre-1958-doctrine">§</a></h3>
 <div class="table-wrap"><table>
 <thead>
@@ -325,6 +390,61 @@ post-1968 “bishops” — including Ratzinger, consecrated 28 May 1977 — are
 </ol>
 <hr />
 </section><section class="chapter"><h2 id="ii-ecumenism-the-one-true-church">II. Ecumenism / the One True Church <a class="header-anchor" href="#ii-ecumenism-the-one-true-church">§</a></h2>
+<h3 id="side-by-side-the-one-true-church-before-and-after-the-council">Side by side: the one true Church before and after the Council <a class="header-anchor" href="#side-by-side-the-one-true-church-before-and-after-the-council">§</a></h3>
+<h4>II.1 The Church of Christ <em>is</em> the Catholic Church</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius XII, <em>Humani Generis</em> §27 (1950), censuring those who reject:<br>
+“the doctrine… which teaches that the Mystical Body of Christ and the Roman Catholic Church are one and the same thing.”
+<em>Mystici Corporis</em> §13 (1943): “this true Church of Jesus Christ - which is the One, Holy, Catholic, Apostolic and Roman Church”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Vatican II, <em>Lumen Gentium</em> §8 (1964):<br>
+“This Church constituted and organized in the world as a society, subsists in the Catholic Church… although many elements of sanctification and of truth are found outside of its visible structure.”<br>
+John Paul II, <em>Ut Unum Sint</em> §11 (1995): “To the extent that these elements are found in other Christian Communities, the one Church of Christ is effectively present in them.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> identity (“one and the same thing”) becomes subsistence, and the Church of Christ is said to be “effectively present” in non-Catholic communities. Ratzinger himself (2000): “this difference between <em>subsistit</em> and <em>est</em> cannot be fully resolved from the logical viewpoint.” <em>Their reply:</em> CDF 2007 — “subsists” “indicates the full identity” (counter-argument 1).</p>
+<h4>II.2 Who are members of the Body</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Mystici Corporis</em> §22:<br>
+“Actually only those are to be included as members of the Church who have been baptized and profess the true faith… It follows that those who are divided in faith or government cannot be living in the unity of such a Body”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Unitatis Redintegratio</em> §3 (1964):<br>
+“all who have been justified by faith in Baptism are members of Christ’s body, and have a right to be called Christian.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> those “divided in faith” are not members; now all the validly baptized, including Protestants, are “members of Christ’s body”. <em>Translation note:</em> <em>Ut Unum Sint</em> §13 renders the same sentence “incorporated into Christ”.</p>
+<h4>II.3 Separated communities and salvation</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius XI, <em>Mortalium Animos</em> §10 (1928):<br>
+“whosoever therefore is not united with the body is no member of it, neither is he in communion with Christ its head.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Unitatis Redintegratio</em> §3:<br>
+“the separated Churches and Communities as such… have been by no means deprived of significance and importance in the mystery of salvation. For the Spirit of Christ has not refrained from using them as means of salvation”
+<em>Ut Unum Sint</em> §11: “the Second Vatican Council speaks of a certain, though imperfect communion.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> no communion with Christ the Head outside the Body; now the separated communities <em>as such</em> are means of salvation and in “a certain… communion”. <em>Their reply:</em> their efficacy “derive[s]… from the very fullness of grace and truth entrusted to the Church” (UR 3).</p>
+<h4>II.4 Joining non-Catholics in worship</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Mortalium Animos</em> §8:<br>
+“the Apostolic See cannot on any terms take part in their assemblies, nor is it anyway lawful for Catholics either to support or to work for such enterprises”<br>
+1917 Code c. 1258 §1: “Haud licitum est fidelibus quovis modo active assistere seu partem habere in sacris acatholicorum.” (It is not lawful for the faithful <em>in any way</em> to assist actively at, or take part in, non-Catholic worship.)</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Unitatis Redintegratio</em> §8:<br>
+“it is allowable, indeed desirable that Catholics should join in prayer with their separated brethren”<br>
+§15: “some worship in common (communicatio in sacris), given suitable circumstances and the approval of Church authority, is not only possible but to be encouraged.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> forbidden “in any way” becomes “desirable” and “to be encouraged”. Under the 1917 Code (c. 2316) one who joins heretics in worship against c. 1258 “suspectus de haeresi est”. <em>Their reply:</em> this is discipline, which can change (Harrison); <em>answer:</em> c. 1258 applies divine law (Daly).</p>
+<h4>II.5 Sacraments for non-Catholics</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · 1917 Code c. 731 §2:<br>
+“Vetitum est Sacramenta Ecclesiae ministrare haereticis aut schismaticis, etiam bona fide errantibus eaque petentibus, nisi prius, erroribus reiectis, Ecclesiae reconciliati fuerint.” (Sacraments may not be given to heretics or schismatics, <em>even those erring in good faith</em> who ask for them, unless they first renounce their errors and are reconciled.)</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · 1983 Code c. 844 §3:<br>
+“Catholic ministers administer the sacraments of penance, Eucharist, and anointing of the sick licitly to members of Eastern Churches which do not have full communion with the Catholic Church if they seek such on their own accord and are properly disposed.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> no sacraments without renouncing error and reconciliation; now the Eucharist is given licitly with neither. This is <strong>universal law</strong> — the point where the infallibility of universal discipline (Van Noort, Part 3 video) bears directly.</p>
+<h4>II.6 Other religions</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Mortalium Animos</em> §2:<br>
+“that false opinion which considers all religions to be more or less good and praiseworthy… one who supports those who hold these theories and attempt to realize them, is altogether abandoning the divinely revealed religion.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §2 (1965):<br>
+“The Catholic Church rejects nothing that is true and holy in these religions. She regards with sincere reverence those ways of conduct and of life, those precepts and teachings…”<br>
+John Paul II, General Audience, 9 Sept 1998 §2: “The various religions arose precisely from this primordial human openness to God… We experienced an eloquent manifestation of this truth at the World Day of Prayer for Peace on 27 October 1986 in Assisi.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Pius XI condemns supporting the view that all religions are “more or less good”; the post-conciliar teaching reveres their precepts, says they “arose” from an openness to God inspired by the Spirit (same audience: every such quest “is inspired by the Holy Spirit”), and holds up Assisi as its manifestation. <em>Their reply:</em> NA does not say the religions are equally good (Harrison).</p>
 <h3 id="pre-1958-doctrine-1">Pre-1958 doctrine <a class="header-anchor" href="#pre-1958-doctrine-1">§</a></h3>
 <ul>
 <li><strong>Pius XI, <em>Mortalium Animos</em> (1928)</strong> — vatican.va
@@ -380,6 +500,32 @@ post-1968 “bishops” — including Ratzinger, consecrated 28 May 1977 — are
 </ol>
 <hr />
 </section><section class="chapter"><h2 id="iii-doubtfulness-of-the-1968-episcopal-consecration-rite">III. Doubtfulness of the 1968 Episcopal Consecration Rite <a class="header-anchor" href="#iii-doubtfulness-of-the-1968-episcopal-consecration-rite">§</a></h2>
+<h3 id="side-by-side-the-rite-before-and-after-1968">Side by side: the rite before and after 1968 <a class="header-anchor" href="#side-by-side-the-rite-before-and-after-1968">§</a></h3>
+<h4>III.1 The essential words</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius XII, <em>Sacramentum Ordinis</em> §4–5 (1947): the form must be words “quibus univoce significantur effectus sacramentales, — scilicet potestas Ordinis et gratia Spiritus Sancti.” The form for bishops:<br>
+«Comple in Sacerdote tuo ministerii tui summam, et ornamentis totius glorificationis instructum coelestis unguenti rore sanctifica.»</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Paul VI, <em>Pontificalis Romani</em> (1968), repeating the same univocity rule, then prescribing:<br>
+«Et nunc effunde super hunc Electum eam virtutem, quae a te est, Spiritum principalem, quem dedisti dilecto Filio Tuo Iesu Christo, quem Ipse donavit sanctis Apostolis, qui constituerunt Ecclesiam per singula loca, ut sanctuarium tuum, in gloriam et laudem indeficientem nominis tui.»</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the old form names the priest (<em>Sacerdote</em>) and the fullness of his ministry (<em>ministerii tui summam</em>); the new essential words name neither, yet Paul VI applies the rule that they must <em>univocally</em> signify the power of Order. <em>Their reply:</em> the meaning is fixed by the surrounding prayer and by Eastern use (Pierre-Marie).</p>
+<h4>III.2 Invoking the Holy Ghost is not enough</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Leo XIII, <em>Apostolicae Curae</em> §25 (1896), on the Anglican form:<br>
+“‘Receive the Holy Ghost,’ certainly do not in the least definitely express the sacred Order of Priesthood (sacerdotium) or its grace and power”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Pontificalis Romani</em> (1968) — the essential petition:<br>
+“effunde super hunc Electum eam virtutem, quae a te est, Spiritum principalem”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction (principle and its application):</strong> Leo rules that a bare invocation of the Spirit does not determine the Order conferred; the new form’s core is an invocation of the “governing Spirit”, which Cekada shows is also asked for Coptic abbots and King David. <em>Their reply:</em> Botte — <em>principalis</em> is the bishop’s specific gift.</p>
+<h4>III.3 The return to antiquity</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius XII, <em>Mediator Dei</em> §63 (1947):<br>
+“Just as obviously unwise and mistaken is the zeal of one who in matters liturgical would go back to the rites and usage of antiquity, discarding the new patterns introduced by disposition of divine Providence”<br>
+Leo XIII, <em>Apostolicae Curae</em> §30, on the Anglican reformers: “under a pretext of returning to the primitive form, they corrupted the Liturgical Order in many ways to suit the errors of the reformers.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Pontificalis Romani</em> (1968):<br>
+“opportunum visum est e fontibus antiquis arcessere precationem consecratoriam quae in ea invenitur, quae vocatur Traditio Apostolica Hippolyti Romani, saeculo tertio ineunte scripta”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the received Roman form is discarded for a third-century text of uncertain wording and no record of approval (Cekada §V.D) — the very pattern Pius XII condemned and Leo XIII exposed.</p>
 <h3 id="the-two-forms">The two forms <a class="header-anchor" href="#the-two-forms">§</a></h3>
 <ul>
 <li><strong>Pius XII, <em>Sacramentum Ordinis</em> §4–5 (1947), AAS 40 (1948) 5–7</strong> (vatican.va Latin):
@@ -476,11 +622,66 @@ post-1968 “bishops” — including Ratzinger, consecrated 28 May 1977 — are
 <p><strong>Strategic framing:</strong> argue <strong>positive doubt + tutiorism</strong> as the primary claim (the SSPX concessions get you there), and <strong>invalidity</strong> (Cekada) as the stronger secondary claim. Doubt alone is enough for the practical conclusion.</p>
 <hr />
 </section><section class="chapter"><h2 id="iv-synthesis-why-the-novus-ordo-is-a-new-religion">IV. Synthesis — Why the Novus Ordo Is a New Religion <a class="header-anchor" href="#iv-synthesis-why-the-novus-ordo-is-a-new-religion">§</a></h2>
-<p>This section ties I–III together. It does not add a fourth contradiction; it argues that the three
-changes, taken together with the new liturgy, amount to a <em>different religion</em> rather than a reformed one.</p>
+<p>This section ties I–III together. It does not add a new pillar; it argues that the changes, taken together
+with the new liturgy, amount to a <em>different religion</em> rather than a reformed one.</p>
+<h3 id="side-by-side-the-catholic-religion-before-and-after-the-council">Side by side: the Catholic religion before and after the Council <a class="header-anchor" href="#side-by-side-the-catholic-religion-before-and-after-the-council">§</a></h3>
+<h4>IV.1 The meaning of dogma</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Vatican I, <em>Dei Filius</em> ch. 4 (1870), Tanner tr.:<br>
+“that meaning of the sacred dogmas is ever to be maintained which has once been declared by holy mother church, and there must never be any abandonment of this sense under the pretext or in the name of a more profound understanding.”<br>
+Oath against Modernism (1910): “I entirely reject the heretical misrepresentation that dogmas evolve and change from one meaning to another different from the one which the Church held previously.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · John Paul II, <em>Ecclesia Dei</em> §4 (1988):<br>
+“an incomplete and contradictory notion of Tradition. Incomplete, because it does not take sufficiently into account the living character of Tradition”<br>
+Card. Arthur Roche, Prefect for Divine Worship, BBC Radio 4, 19 Mar 2023: “You know the theology of the Church has changed.” <em>(secondary transcript; verify against the audio)</em></p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> fixed meaning, sworn by every cleric, against “living” Tradition invoked to condemn the man who held to the fixed one — and a Roman prefect saying outright that the theology changed. <em>Their reply:</em> “living Tradition” means homogeneous growth, which <em>Dei Filius</em> itself allows “in eodem scilicet dogmate, eodem sensu” (<em>Ecclesia Dei</em> footnote 5 cites Dei Verbum 8 and Dei Filius ch. 4).</p>
+<h4>IV.2 The sworn profession of faith</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Oath against Modernism, required of all clergy from 1910:<br>
+“the absolute and immutable truth preached by the apostles from the beginning may never be believed to be different, may never be understood in any other way.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · CDF, 17 July 1967 — the document’s own title:<br>
+“Formula to adopt from now on in cases in which the Profession of Faith is prescribed by law in substitution of the Tridentine formula and the oath against modernism”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the legally required public profession of faith — Bellarmine’s first bond — was replaced, and the oath against dogmatic evolution dropped two years after the Council. <em>Their reply:</em> the new formula still professes the faith; dropping an oath is not denying its content.</p>
+<h4>IV.3 Condemning the modern errors</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · <em>Quanta Cura</em> §6 (1864):<br>
+“by our Apostolic authority, we reprobate, proscribe, and condemn all the singular and evil opinions and doctrines severally mentioned in this letter”<br>
+Pius X, <em>Pascendi</em> §39 (1907): modernism is “the synthesis of all heresies… the destruction not of the Catholic religion alone but of all religion.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Paul VI, closing address of Vatican II, 7 Dec 1965:<br>
+“The religion of the God who became man has met the religion (for such it is) of man who makes himself God. And what happened? Was there a clash, a battle, a condemnation? There could have been, but there was none.”<br>
+Latin: “nos prae ceteris, hominis sumus cultores” (we, more than any others, are cultivators of man).</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the pre-conciliar popes met the religion of man with solemn condemnation; the Council’s pope says there was none, and calls the Church its foremost <em>cultores</em>. Ratzinger later called <em>Gaudium et Spes</em> “a kind of countersyllabus” <em>(book page <span class="flag flag-unverified">Unverified</span>)</em>. <em>Their reply:</em> the same address turns humanism toward God (“our Christianity becomes centered on God”).</p>
+<h4>IV.4 Changing the received rites</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Council of Trent, Sess. 7, can. 13:<br>
+“If any one saith, that the received and approved rites of the Catholic Church, wont to be used in the solemn administration of the sacraments, may be contemned, or without sin be omitted at pleasure by the ministers, or be changed, by every pastor of the churches, into other new ones; let him be anathema.”<br>
+Pius XII, <em>Sacramentum Ordinis</em> §1: “Ecclesiae nulla competat potestas in substantiam Sacramentorum.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Paul VI, <em>Divinae Consortium Naturae</em> (1971), on Confirmation:<br>
+“Nos in hac recognitione includi voluimus etiam ea, quae ad ipsam essentiam ritus confirmande [sic] pertinent” (in this revision We wished to include also the things that pertain to the very essence of the rite)
+<em>Sacram Unctionem Infirmorum</em> (1972): “We thought fit to modify the sacramental formula”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> every sacramental rite rewritten between 1968 and 1972, including what Paul VI himself calls the rite’s “very essence”. <em>Their reply:</em> can. 13 binds lesser pastors, not the pope (<em>Mediator Dei</em> §58); Trent Sess. 21 ch. 2 allows change “their substance being untouched”.</p>
+<h4>IV.5 What the Mass is</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Council of Trent, Sess. 22, can. 1 and 3:<br>
+“If any one saith, that in the mass a true and proper sacrifice is not offered to God… let him be anathema.” “If any one saith, that the sacrifice of the mass is only a sacrifice of praise and of thanksgiving; or, that it is a bare commemoration of the sacrifice consummated on the cross, but not a propitiatory sacrifice… let him be anathema.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · General Instruction of the Roman Missal (1969), art. 7:<br>
+“Cena dominica sive Missa est sacra synaxis seu congregatio populi Dei in unum convenientis, sacerdote praeside, ad memoriale Domini celebrandum.” (The Lord’s Supper or Mass is the sacred meeting or assembly of the People of God gathered together, the priest presiding, to celebrate the memorial of the Lord.)</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Trent defines a true, propitiatory sacrifice offered by the priest; the new Missal’s definition names an assembly and a memorial, with no sacrifice and no priest acting in Christ’s person. Rome rewrote art. 7 in 1970 “pour qu’apparaissent plus clairement les vérités… la vérité du sacrifice, la nature sacramentelle du sacerdoce ministériel et la présence réelle” (<em>Notitiae</em>) — but the rite it defined stayed the same.</p>
+<h4>IV.6 Rome against itself (both post-conciliar)</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Benedict XVI</strong> · <em>Summorum Pontificum</em> art. 1 and letter to bishops (2007):<br>
+“These two expressions of the Church’s lex orandi will in no way lead to a division in the Church’s lex credendi… for they are two usages of the one Roman rite.” “What earlier generations held as sacred, remains sacred and great for us too, and it cannot be all of a sudden entirely forbidden or even considered harmful.”</p>
+</blockquote><blockquote class="post">
+<p><strong>Francis</strong> · <em>Traditionis Custodes</em> art. 1 (2021):<br>
+“The liturgical books promulgated by Saint Paul VI and Saint John Paul II, in conformity with the decrees of Vatican Council II, are the unique expression of the lex orandi of the Roman Rite.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> “two usages of the one Roman rite” that “cannot be… forbidden” becomes one “unique expression”, with the old rite’s users needing to “return in due time to the Roman Rite” (Francis’s letter to bishops). <em>Desiderio Desideravi</em> §31 gives the reason: “The problematic is primarily ecclesiological.”</p>
 <h3 id="1-the-framework-bellarmines-three-bonds">1. The framework: Bellarmine’s three bonds <a class="header-anchor" href="#1-the-framework-bellarmines-three-bonds">§</a></h3>
 <p><strong>St. Robert Bellarmine, <em>De Ecclesia Militante</em>, Lib. III, cap. 2</strong> (Venice 1721 ed., Tomus II, p. 53; scan: <a href="https://archive.org/details/bub_gb_SfJq79_HdscC">archive.org/details/bub_gb_SfJq79_HdscC</a>). Latin normalized from OCR:</p>
-<blockquote>
+<div class="pair"><blockquote class="pre">
 <p><em>…illam unam &amp; veram esse coetum hominum ejusdem Christianae fidei professione, &amp; eorundem Sacramentorum communione colligatum, sub regimine legitimorum pastorum, ac praecipue unius Christi in terris Vicarii Romani Pontificis.</em>
 <em>Tres enim sunt partes hujus definitionis. Professio verae fidei, Sacramentorum communio, &amp; subjectio ad legitimum pastorem Romanum Pontificem.</em></p>
 </blockquote>
@@ -693,6 +894,40 @@ changes, taken together with the new liturgy, amount to a <em>different religion
 </section><section class="chapter"><h2 id="v-una-cum-the-mass-as-public-profession-of-unity-in-faith">V. <em>Una Cum</em> — The Mass as Public Profession of Unity in Faith <a class="header-anchor" href="#v-una-cum-the-mass-as-public-profession-of-unity-in-faith">§</a></h2>
 <p>This section applies Bellarmine’s three bonds (Section IV) to the Mass itself. Part A: the Mass <em>is</em> the sacrament and public sign of one faith, one communion, one head. Part B: the Canon names the pope as that head (<em>una cum</em>). Part C: so offering or actively joining a Mass that names the claimant professes communion with him — and the post-conciliar Church has falsified the sign from the other side by giving Communion to those outside its unity.</p>
 <p>Bond key: <strong><span class="bond bond-f" title="Bond: faith">F</span></strong> profession of the same faith · <strong><span class="bond bond-s" title="Bond: sacraments">S</span></strong> communion of the same sacraments · <strong><span class="bond bond-p" title="Bond: pastors">P</span></strong> rule of legitimate pastors / the Roman Pontiff.</p>
+<h3 id="side-by-side-the-altar-before-and-after-the-council">Side by side: the altar before and after the Council <a class="header-anchor" href="#side-by-side-the-altar-before-and-after-the-council">§</a></h3>
+<h4>V.1 Who may be named, and who may receive</h4>
+<blockquote>
+<p><strong>Before</strong> · Benedict XIV, <em>Ex Quo</em> (1756) §9:<br>
+the Roman Pontiff and one’s bishop are commemorated “provided they are Catholic. But if either or both of them are schismatic or heretic they should by no means be commemorated.”<br>
+§23: prayer for their conversion “must not take the form of proclaiming their names in the solemn prayer during the sacrifice of the Mass.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · 1983 Code c. 844 §3:<br>
+“Catholic ministers administer the sacraments of penance, Eucharist, and anointing of the sick licitly to members of Eastern Churches which do not have full communion with the Catholic Church if they seek such on their own accord and are properly disposed.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> a schismatic could not even be <em>named</em> at the altar; now he may <em>receive Communion</em> there.</p>
+<h4>V.2 Catholics at the Masses of non-Catholics</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · St. Thomas, <em>Summa</em> III q.82 a.9:<br>
+“Consequently, it is not lawful to receive Communion from them, or to assist at their mass.” … “heretics, schismatics, and excommunicates, have been forbidden, by the Church’s sentence, to perform the Eucharistic rite. And therefore whoever hears their mass or receives the sacraments from them, commits sin.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · John Paul II, <em>Ecclesia de Eucharistia</em> §46 (2003):<br>
+“Conversely, in specific cases and in particular circumstances, Catholics too can request these same sacraments from ministers of Churches in which these sacraments are valid.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> receiving the sacraments from schismatics is a sin; now Catholics may request them from schismatic ministers. <em>Their reply:</em> only in grave need, and only where the sacraments are valid.</p>
+<h4>V.3 The sign of unity</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Council of Trent, Sess. 13, ch. 2:<br>
+the Eucharist is “a symbol of that one body whereof He is the head, and to which He would fain have us as members be united by the closest bond of faith, hope, and charity, that we might all speak the same things, and there might be no schisms amongst us.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Unitatis Redintegratio</em> §8 (Latin):<br>
+“Significatio unitatis plerumque vetat communicationem. Gratia procuranda quandoque illam commendat.” (Signifying unity for the most part forbids common worship. The grace to be obtained sometimes recommends it.)</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the Eucharist is the sign of unity in faith; now the sign may be set aside “sometimes”, for the sake of grace, with those who lack that unity.</p>
+<h4>V.4 Rome against itself (both post-conciliar)</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Ecclesia de Eucharistia §38 and §44</strong> (2003):<br>
+“the sacrament of his body and blood does not permit duplicity.” “the Church’s unity… absolutely requires full communion in the bonds of the profession of faith, the sacraments and ecclesiastical governance”</p>
+</blockquote><blockquote class="post">
+<p><strong>Ecclesia de Eucharistia §45</strong> and c. 844 §3:<br>
+“the same is not true with respect to the administration of the Eucharist under special circumstances, to individual persons belonging to Churches or Ecclesial Communities not in full communion with the Catholic Church.” (c. 844 §3 requires no profession of faith at all.)</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the same encyclical says the Eucharist “absolutely requires” all three bonds, then gives it to individuals who lack the bonds of government and, for Eastern non-Catholics, of any stated profession of faith.</p>
 <h3 id="a-the-eucharist-is-the-sacrament-and-sign-of-unity-in-faith">A. The Eucharist is the sacrament and sign of unity in faith <a class="header-anchor" href="#a-the-eucharist-is-the-sacrament-and-sign-of-unity-in-faith">§</a></h3>
 <ul>
 <li><strong>1 Cor 10:16–17, 21</strong> (Douay-Rheims, <a href="https://drbo.org/chapter/53010.htm">drbo.org/chapter/53010.htm</a>): “For we, being many, are one bread, one body, all that partake of one bread.” … “You cannot be partakers of the table of the Lord, and of the table of devils.” Challoner’s note: “it is by our communicating with Christ, and with one another, in this blessed sacrament, that we are formed into one mystical body.” <strong><span class="bond bond-s" title="Bond: sacraments">S</span></strong></li>
