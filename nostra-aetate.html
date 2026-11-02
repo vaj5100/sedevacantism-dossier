@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nostra Aetate Dissected: Every Sentence Graded</title>
+<meta name="description" content="Every sentence of Vatican II's declaration Nostra Aetate graded with the Church's theological notes, from the Latin and the Acta Synodalia, set beside earlier teaching: the heresy count, the silences and the contradictions.">
+<style>
+:root {
+  --paper: #f8f5ee;
+  --paper-2: #f1ece0;
+  --ink: #1f1b16;
+  --ink-soft: #5b5348;
+  --rule: #ddd4c2;
+  --rubric: #9b1c1c;
+  --rubric-soft: #f4e3df;
+  --gold: #8a6a1f;
+  --gold-soft: #f6ecd2;
+  --blue: #234a72;
+  --side: 300px;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Charter, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #171512; --paper-2: #1f1c18; --ink: #ece6da; --ink-soft: #a89f90;
+    --rule: #38322a; --rubric: #e0786a; --rubric-soft: #2e1e1b; --gold: #d9b25a;
+    --gold-soft: #2c2616; --blue: #8fb4dc;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #171512; --paper-2: #1f1c18; --ink: #ece6da; --ink-soft: #a89f90;
+  --rule: #38322a; --rubric: #e0786a; --rubric-soft: #2e1e1b; --gold: #d9b25a;
+  --gold-soft: #2c2616; --blue: #8fb4dc;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--serif); font-size: 18px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--rubric); }
+
+/* Sidebar */
+.sidebar {
+  position: fixed; inset: 0 auto 0 0; width: var(--side); overflow-y: auto;
+  background: var(--paper-2); border-right: 1px solid var(--rule);
+  padding: 2rem 1.25rem 3rem; font-family: var(--sans); font-size: 14px; line-height: 1.4;
+}
+.brand { display: block; color: var(--ink); text-decoration: none; margin-bottom: 1.5rem; }
+.brand .cross { color: var(--rubric); font-family: var(--serif); font-size: 1.6rem; line-height: 1; }
+.brand strong { display: block; font-family: var(--serif); font-size: 1.15rem; margin-top: .35rem; }
+.brand span { color: var(--ink-soft); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.search { width: 100%; padding: .55rem .7rem; border: 1px solid var(--rule); border-radius: 6px;
+  background: var(--paper); color: var(--ink); font: inherit; margin-bottom: 1.25rem; }
+.search:focus { outline: 2px solid var(--rubric); outline-offset: 1px; }
+.toc ol { list-style: none; margin: 0; padding: 0; }
+.toc > ol > li { margin-bottom: .6rem; }
+.toc > ol > li > a { font-weight: 600; color: var(--ink); }
+.toc ol ol { margin: .3rem 0 0 .2rem; padding-left: .7rem; border-left: 1px solid var(--rule); }
+.toc ol ol li { margin: .2rem 0; }
+.toc a { display: block; color: var(--ink-soft); text-decoration: none; padding: .1rem .3rem; border-radius: 4px; }
+.toc a:hover { color: var(--rubric); background: var(--rubric-soft); }
+.toc a.active { color: var(--rubric); background: var(--rubric-soft); }
+.side-foot { margin-top: 2rem; color: var(--ink-soft); font-size: 12px; }
+.theme-btn { margin-top: .8rem; background: none; border: 1px solid var(--rule); color: var(--ink-soft);
+  border-radius: 6px; padding: .35rem .6rem; font: inherit; cursor: pointer; }
+
+/* Main */
+main { margin-left: var(--side); padding: 0 clamp(1.25rem, 5vw, 4.5rem) 6rem; }
+.content { max-width: 52rem; }
+.hero { padding: 4.5rem 0 2.5rem; border-bottom: 1px solid var(--rule); margin-bottom: 1rem; }
+.hero .eyebrow { font-family: var(--sans); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--rubric); }
+.hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.3rem); line-height: 1.12; margin: .5rem 0 1rem; font-weight: 600; letter-spacing: -.01em; }
+.hero p { color: var(--ink-soft); font-size: 1.1rem; max-width: 40rem; margin: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-top: 1.6rem; font-family: var(--sans); font-size: 13px; color: var(--ink-soft); }
+.legend span { display: inline-flex; align-items: center; gap: .4rem; }
+
+section.chapter { padding-top: 2rem; }
+h2 { font-size: 1.85rem; line-height: 1.2; margin: 2.5rem 0 1rem; padding-top: 1.5rem; border-top: 3px double var(--rule); font-weight: 600; }
+section.chapter:first-of-type h2 { border-top: 0; padding-top: 0; }
+h3 { font-size: 1.3rem; margin: 2.2rem 0 .7rem; color: var(--rubric); font-weight: 600; }
+h4 { font-size: 1.05rem; margin: 1.6rem 0 .5rem; }
+.header-anchor { float: left; margin-left: -1.2em; width: 1.2em; color: var(--rule); text-decoration: none; font-weight: 400; opacity: 0; transition: opacity .15s; }
+h2:hover .header-anchor, h3:hover .header-anchor { opacity: 1; }
+p { margin: .8rem 0; }
+ul, ol { padding-left: 1.4rem; }
+li { margin: .3rem 0; }
+li > ul, li > ol { margin: .3rem 0; }
+strong { font-weight: 650; }
+hr { display: none; }
+
+blockquote {
+  margin: 1.2rem 0; padding: .6rem 1.2rem; border-left: 3px solid var(--rubric);
+  background: var(--paper-2); border-radius: 0 6px 6px 0; color: var(--ink);
+}
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0 .7rem; }
+.pair blockquote { margin: 0; font-size: .95em; }
+.pair .pre { border-left-color: #2f5e8c; }
+.pair .post { border-left-color: var(--rubric); }
+.pair blockquote > p:first-child > strong:first-child { display: inline-block; font-family: var(--sans); font-size: 11px;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-right: .2em; }
+.pair .pre > p:first-child > strong:first-child { color: #2f5e8c; }
+.pair .post > p:first-child > strong:first-child { color: var(--rubric); }
+p.verdict { background: var(--gold-soft); border-left: 3px solid var(--gold); padding: .6rem .9rem; border-radius: 0 6px 6px 0; margin: 0 0 1.6rem; }
+blockquote.solemn { border-left: 4px double var(--ink); background: var(--paper); box-shadow: inset 0 0 0 1px var(--rule); }
+blockquote.solemn > p:first-child > strong:first-child { display: inline-block; font-family: var(--sans); font-size: 11px; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--paper); background: var(--ink); padding: .05rem .45rem; border-radius: 3px; margin-right: .3em; }
+blockquote.solemn-condemned > p:first-child > strong:first-child { background: var(--ink-soft); }
+.legend .swatch-solemn { background: var(--ink); }
+p.verdict + p.reply { margin-top: -1rem; }
+p.reply { margin: .5rem 0 .5rem 1.2rem; padding-left: .8rem; border-left: 2px solid var(--rule); font-size: .95em; }
+p.reply-objection strong { color: var(--ink-soft); }
+p.reply-answer + h4, p.reply-answer + p:not(.reply) { margin-top: 1.6rem; }
+.swatch { display: inline-block; width: .9em; height: .9em; border-radius: 2px; vertical-align: -1px; }
+.swatch-pre { background: #2f5e8c; } .swatch-post { background: var(--rubric); } .swatch-verdict { background: var(--gold); }
+.switch { display: block; margin: -.6rem 0 1.2rem; font-weight: 600; color: var(--rubric); text-decoration: none; }
+.switch:hover { text-decoration: underline; }
+@media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pair .pre { border-left-color: #8fb4dc; } :root:not([data-theme="light"]) .pair .pre > p:first-child > strong:first-child { color: #8fb4dc; } }
+:root[data-theme="dark"] .pair .pre { border-left-color: #8fb4dc; }
+:root[data-theme="dark"] .pair .pre > p:first-child > strong:first-child { color: #8fb4dc; }
+blockquote p { margin: .4rem 0; }
+blockquote em { font-style: italic; }
+
+code { font-family: var(--mono); font-size: .82em; background: var(--paper-2); padding: .1em .35em; border-radius: 4px; }
+pre.syllogism {
+  background: var(--paper-2); border: 1px solid var(--rule); border-left: 3px solid var(--gold);
+  border-radius: 6px; padding: 1.1rem 1.3rem; overflow-x: auto; line-height: 1.55;
+}
+pre.syllogism code { background: none; padding: 0; font-size: 14px; white-space: pre-wrap; }
+
+.table-wrap { overflow-x: auto; margin: 1.2rem 0; border: 1px solid var(--rule); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 15.5px; line-height: 1.5; }
+th, td { padding: .6rem .8rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+th { background: var(--paper-2); font-family: var(--sans); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { min-width: 11rem; }
+
+.bond { display: inline-block; min-width: 1.4em; padding: 0 .35em; margin: 0 .08em; border-radius: 4px;
+  font-family: var(--sans); font-size: 11px; font-weight: 700; line-height: 1.6; text-align: center; vertical-align: 2px; color: #fff; }
+.bond-f { background: #2f5e8c; } .bond-s { background: #8a6a1f; } .bond-p { background: #9b1c1c; }
+.flag { display: inline-block; padding: 0 .45em; border-radius: 999px; font-family: var(--sans);
+  font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; vertical-align: 2px; }
+.flag-unverified { background: var(--gold-soft); color: var(--gold); border: 1px solid var(--gold); }
+.flag-inference { background: var(--paper-2); color: var(--ink-soft); border: 1px solid var(--rule); }
+.warn { display: inline-flex; align-items: center; justify-content: center; width: 1.15em; height: 1.15em;
+  border-radius: 50%; background: var(--rubric); color: #fff; font-family: var(--sans); font-size: 12px; font-weight: 800; vertical-align: 1px; margin-right: .15em; }
+li.caution, p.caution { background: var(--rubric-soft); border-radius: 6px; padding: .35rem .7rem; list-style: none; margin-left: -1.4rem; position: relative; }
+p.caution { margin-left: 0; }
+li.caution::before, p.caution::before { content: "!"; display: inline-flex; align-items: center; justify-content: center;
+  width: 1.15em; height: 1.15em; border-radius: 50%; background: var(--rubric); color: #fff;
+  font-family: var(--sans); font-size: 12px; font-weight: 800; margin-right: .45em; vertical-align: 1px; }
+
+mark { background: #f5d76e; color: #1f1b16; border-radius: 2px; padding: 0 .1em; }
+.no-hits { display: none; color: var(--ink-soft); font-family: var(--sans); font-size: 13px; }
+
+.menu-btn { display: none; }
+.to-top { position: fixed; right: 1.2rem; bottom: 1.2rem; width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink-soft); font-size: 1.1rem; cursor: pointer;
+  opacity: 0; pointer-events: none; transition: opacity .2s; }
+.to-top.show { opacity: 1; pointer-events: auto; }
+footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 14px; font-family: var(--sans); }
+
+@media (max-width: 960px) {
+  body { font-size: 17px; }
+  .sidebar { transform: translateX(-100%); transition: transform .25s; z-index: 20; width: min(86vw, 340px); box-shadow: 0 0 40px rgba(0,0,0,.25); }
+  body.nav-open .sidebar { transform: none; }
+  main { margin-left: 0; }
+  .menu-btn { display: inline-flex; position: fixed; top: .8rem; left: .8rem; z-index: 30; align-items: center; gap: .4rem;
+    padding: .45rem .75rem; border-radius: 6px; border: 1px solid var(--rule); background: var(--paper-2);
+    color: var(--ink); font-family: var(--sans); font-size: 14px; cursor: pointer; }
+  .hero { padding-top: 4.5rem; }
+  .header-anchor { display: none; }
+}
+@media print {
+  .sidebar, .menu-btn, .to-top, .search, .header-anchor { display: none !important; }
+  main { margin: 0; padding: 0; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  a { color: #000; text-decoration: none; }
+  h2 { break-before: page; }
+  blockquote, pre, .table-wrap, li, .pair, p.verdict { break-inside: avoid; }
+  h3, h4 { break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .hero { padding-top: 0; }
+  .content { max-width: none; }
+  a[href^="http"] { word-break: break-all; }
+}
+@media print { section.chapter:first-of-type h2 { break-before: auto; } }
+@page { size: A4; margin: 16mm 15mm; }
+</style>
+</head>
+<body>
+<button class="menu-btn" aria-label="Open contents">☰ Contents</button>
+<nav class="sidebar" aria-label="Contents">
+  <a class="brand" href="#top"><div class="cross">✠</div><strong>The Case for Sedevacantism</strong><span>Nostra Aetate dissected</span></a>
+  <a class="switch" href="nostra-aetate.pdf">Download PDF (A4)</a><a class="switch" href="index.html">← Presentation edition</a>
+  <input class="search" type="search" placeholder="Search this page…" aria-label="Search this page">
+  <p class="no-hits">No matches.</p>
+  <div class="toc"><ol><li><a href="#summary">Summary</a></li><li><a href="#1-how-the-grading-works">1. How the grading works</a><ol><li><a href="#the-scale">The scale</a></li><li><a href="#five-rules">Five rules</a></li><li><a href="#what-kind-of-document-this-is">What kind of document this is</a></li></ol></li><li><a href="#2-how-the-text-was-made">2. How the text was made</a></li><li><a href="#3-the-sentences">3. The sentences</a><ol><li><a href="#1-the-unity-of-mankind">§1: the unity of mankind</a></li><li><a href="#2-hindus-buddhists-and-other-religions">§2: Hindus, Buddhists and &quot;other religions&quot;</a></li><li><a href="#3-the-muslims">§3: the Muslims</a></li><li><a href="#4-the-jews">§4: the Jews</a></li><li><a href="#5-brotherhood-and-discrimination">§5: brotherhood and discrimination</a></li></ol></li><li><a href="#4-the-silences">4. The silences</a></li><li><a href="#5-what-rome-made-of-it">5. What Rome made of it</a><ol><li><a href="#salvation-in-the-sincere-practice-of-what-is-good-in-their-own-religious-traditions">Salvation &quot;in the sincere practice of what is good in their own religious traditions&quot;</a></li><li><a href="#the-jews-salvation-without-confessing-christ-explicitly-and-no-mission">The Jews: salvation &quot;without confessing Christ explicitly&quot;, and no mission</a></li><li><a href="#once-chosen-and-remains-a-chosen-people">&quot;Once chosen&quot; and &quot;remains a chosen people&quot;</a></li></ol></li><li><a href="#6-what-the-critics-say">6. What the critics say</a></li><li><a href="#7-the-count-and-what-it-proves">7. The count, and what it proves</a></li><li><a href="#sources">Sources</a></li></ol></div>
+  <div class="side-foot">
+    <div>Updated 2026-11-01</div>
+    <button class="theme-btn" type="button">Toggle dark mode</button>
+  </div>
+</nav>
+<main id="top">
+  <div class="content">
+    <header class="hero">
+      <div class="eyebrow">A companion study · Vatican II, 28 October 1965</div>
+      <h1>Nostra Aetate Dissected: Every Sentence Graded</h1>
+      <p>Forty-one sentences, graded one by one with the notes the Church herself used, from the official Latin and the Council's own record of the drafts. Every grade gives its reasons and the defenders' reply.</p>
+      <div class="legend"><span><span class="swatch swatch-pre"></span> Before the Council</span><span><span class="swatch swatch-post"></span> Nostra Aetate or after</span><span><span class="swatch swatch-verdict"></span> The contradiction</span></div>
+    </header>
+    <section class="chapter"><h2 id="summary">Summary <a class="header-anchor" href="#summary">§</a></h2>
+<p><em>Nostra Aetate</em>, the Second Vatican Council’s declaration on the relation of the Church to non-Christian religions, was promulgated by Paul VI on 28 October 1965 after a final vote of 2,221 to 88. It has five paragraphs and forty-one sentences. This page takes the sentences one by one, in the official Latin (<em>AAS</em> 58 [1966] 740–744). It grades each with the theological notes the Church herself used to judge propositions, and sets each beside the Church’s earlier teaching and prayer. It also uses the <em>Acta Synodalia</em>, the Council’s own record of the drafts, the Fathers’ amendments and the drafting body’s replies, to show why each word was chosen.</p>
+<p><strong>The count.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Note</th>
+<th>Sentences</th>
+<th>Which</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heretical</td>
+<td><strong>0</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>Proximate to heresy</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Erroneous</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Suspect of heresy (<em>sapiens haeresim</em>)</td>
+<td><strong>1</strong></td>
+<td>2.5, Buddhism: “by their own efforts … supreme illumination”</td>
+</tr>
+<tr>
+<td>Captious</td>
+<td><strong>1</strong></td>
+<td>4.9, the Jews “still remain most dear”</td>
+</tr>
+<tr>
+<td>Offensive to pious ears</td>
+<td><strong>1</strong></td>
+<td>2.4, Hinduism: the myths “express the divine mystery”</td>
+</tr>
+<tr>
+<td>Ambiguous</td>
+<td><strong>7</strong></td>
+<td>2.7, 2.8, 2.10 (other religions); 3.1, 3.4 (Muslims “adore” and “worship” God); 4.13 (the Jews “not rejected”); 5.4 (discrimination “because of religion”)</td>
+</tr>
+<tr>
+<td>No note</td>
+<td>31</td>
+<td>the rest</td>
+</tr>
+</tbody>
+</table></div>
+<p>Besides the graded sentences, the record shows <strong>eight deliberate silences</strong>: things the Fathers asked to have said, which the drafters refused to say (section 4). And it shows <strong>ten contradictions</strong> with earlier teaching, Scripture or the Church’s prayer: seven in the text itself (section 3) and three more in Rome’s official reading of it since 1965 (section 5).</p>
+<p><strong>What the count means.</strong></p>
+<ol>
+<li><strong>No sentence, read as it stands, denies a defined dogma.</strong> The heresy count is zero. The one critic found who calls particular sentences heresy treats a description of Buddhism as an assertion of it, and ignores St Paul’s “God hath not cast away his people” (section 6).</li>
+<li><strong>Zero heresies is not the same as orthodox.</strong> Ten sentences carry a theological note. Pius VI condemned the Synod of Pistoia’s propositions whether “expressly taught or ambiguously insinuated”, and he refused to let ambiguity be excused by orthodox passages elsewhere (section 1). An ambiguous text in a council is a fault, not a defence.</li>
+<li><strong>The omissions were chosen.</strong> The <em>Acta</em> record the drafters refusing to condemn idolatry, refusing to say that the Christian religion gives the true answer, and striking the Church’s hope for the conversion of the Jews in order to avoid “any appearance of proselytism” (section 4). Nowhere in the declaration’s text do the words error, false, idol, conversion, baptism, Trinity or supernatural occur.</li>
+<li><strong>The sharpest contradictions are in Rome’s reading of the text.</strong> In 1991 a Roman document said that members of other religions “receive salvation in Jesus Christ” “in the sincere practice of what is good in their own religious traditions”, and John Paul II repeated it. In 2015 a Vatican commission called the Jews’ share in salvation “without confessing Christ explicitly” “theologically unquestionable”, and said the Church “neither conducts nor supports” any mission to them. Those texts go where <em>Nostra Aetate</em>’s words stop (section 5).</li>
+</ol>
+<p>This agrees with section 8 of <a href="index.html#8-why-one-cannot-be-in-union-with-vatican-ii-and-nostra-aetate"><em>The Case for Sedevacantism</em></a>. <em>Nostra Aetate</em> shows the direction of the Council and of those who impose it. It does not, read alone, prove a contradiction of dogma. What follows gives the evidence sentence by sentence, so that every grade can be checked and, where the reader disagrees, argued.</p>
+</section><section class="chapter"><h2 id="1-how-the-grading-works">1. How the grading works <a class="header-anchor" href="#1-how-the-grading-works">§</a></h2>
+<h3 id="the-scale">The scale <a class="header-anchor" href="#the-scale">§</a></h3>
+<p>The Church graded doubtful propositions by a scale of “notes” or “censures”. The <em>Catholic Encyclopedia</em> gives the standard definitions:</p>
+<blockquote>
+<p><strong>Catholic Encyclopedia</strong>, “Theological Censures” (J. Sollier, 1908):<br>
+“A proposition is branded heretical when it goes directly and immediately against a revealed or defined dogma, or dogma de fide; erroneous when it contradicts only a certain (certa) theological conclusion or truth clearly deduced from two premises, one an article of faith, the other naturally certain. … It is styled next, proximate to heresy when its opposition to a revealed and defined dogma is not certain, or chiefly when the truth it contradicts, though commonly accepted as revealed, has yet never been the object of a definition (proxima fidei). … rashness or temerity, which means opposition to sound common opinion (communis), and this either for paltry reasons or no reasons at all. A still finer shade of meaning attaches to such censures as sapiens hæresim, errorem (smacking of heresy or error), suspecta de hæresi, errore (suspected of heresy or error). Propositions thus noted may be correct in themselves, but owing to various circumstances of time, place, and persons, are prudently taken to present a signification which is either heretical or erroneous.”<br>
+“A proposition is ambiguous when it is worded so as to present two or more senses, one of which is objectionable; captious when acceptable words are made to express objectionable thoughts; evil-sounding when improper words are used to express otherwise acceptable truths; offensive when verbal expression is such as rightly to shock the Catholic sense and delicacy of faith.”</p>
+</blockquote>
+<p>A Roman manual of 1951, written for students (<em>ad usum auditorum</em>), adds two precisions that matter here:</p>
+<blockquote>
+<p><strong>S. Cartechini SJ</strong>, <em>De valore notarum theologicarum</em> (Rome 1951), cap. 2 and cap. 15:<br>
+“Haeretica est propositio quae <strong>certo</strong> opponitur sive contrarie sive contradictorie veritati de cuius revelatione sufficienter in Ecclesia proposita, certo constet.” “… nam si non constet certo, res non potest dici definita et contraria nequit dici haeretica.”<br>
+“Propositio sapiens haeresim et suspecta est quae dat ansam timendi ne auctor illarum habeat apud se haeresim aliquam vel errorem ex quibus oriatur illa propositio; fundamentum autem, licet sit reale, non est sufficiens ad iudicandum absolute esse haeresim vel errorem.”<br>
+(“A proposition is heretical which is <em>certainly</em> opposed, contrarily or contradictorily, to a truth whose revelation, sufficiently proposed in the Church, is certainly established.” “… for if it is not certainly established, the matter cannot be called defined, and its contrary cannot be called heretical.” “A proposition savouring of heresy, and suspect, is one which gives cause to fear that its author holds some heresy or error from which the proposition springs; the foundation, though real, is not sufficient to judge absolutely that it is heresy or error.” Author’s translation.)</p>
+</blockquote>
+<h3 id="five-rules">Five rules <a class="header-anchor" href="#five-rules">§</a></h3>
+<ol>
+<li><strong>The Latin as it stands comes first.</strong> A proposition is judged first “according to [its] obvious tenor” (<em>prout iacet</em>). The text used is the Latin of the <em>Acta Apostolicae Sedis</em>. Where the vatican.va English departs from it, a literal rendering is given.</li>
+<li><strong>The drafters’ sense comes second.</strong> The <em>Catholic Encyclopedia</em> notes that some propositions are censured “in the sense intended by their author (in sensu ab auctore intento)”. For <em>Nostra Aetate</em> that sense is on record: the drafting body, Cardinal Bea’s Secretariat for Christian Unity, answered every amendment in writing, and the answers are printed in the <em>Acta Synodalia</em>. They are used here both to raise a grade (4.9) and to lower one (4.13).</li>
+<li><strong>Read strictly.</strong> “In a general matter, censures are restrictive laws and, as such, to be interpreted strictly” (<em>Catholic Encyclopedia</em>). Where a sentence has a fair orthodox sense, it gets the lower note.</li>
+<li><strong>A private writer qualifies; he does not censure.</strong> “Private theologians, either individually or collectively have no authority officially to censure propositions, however they may … judge and qualify them according to existing doctrinal standards” (ibid.). These grades are this author’s qualifications, given with their reasons.</li>
+<li><strong>Ambiguity is no excuse, but the note follows the sense.</strong> Pius VI laid down the rule in the bull that condemned the Synod of Pistoia:</li>
+</ol>
+<blockquote>
+<p><strong>Pius VI</strong>, <em>Auctorem Fidei</em> (28 August 1794), introduction §6 and §11 (official Italian, vatican.va):<br>
+“Però se nel parlare si sbaglia, non si può ammettere quella subdola difesa che si è soliti addurre e per la quale, allorché sia stata pronunciata qualche espressione troppo dura, si trova la medesima spiegata più chiaramente altrove, o anche corretta, quasi che questa sfrenata licenza di affermare e di negare a piacimento, che fu sempre una fraudolenta astuzia degl’innovatori a copertura dell’errore, non dovesse valere piuttosto per denunciare l’errore anziché per giustificarlo.”<br>
+“… abbiamo deciso di condannare e riprovare parecchie proposizioni, dottrine e sentenze tratte dagli Atti e Decreti del citato Sinodo, o espressamente insegnate o ambiguamente insinuate, con apposite note e censure apposte a ciascuna di esse”.<br>
+(“But if an error is made in speaking, that sly defence cannot be admitted which is usually put forward, by which, when some too harsh expression has been uttered, the same is found more clearly explained elsewhere, or even corrected; as if this unbridled licence of affirming and denying at will, which was always the fraudulent cunning of innovators to cover error, ought not rather to serve to expose the error than to justify it.” “… we have decided to condemn and reprove several propositions, doctrines and opinions drawn from the Acts and Decrees of the said Synod, whether expressly taught or ambiguously insinuated, with the appropriate notes and censures attached to each.” Author’s translation.)</p>
+<p><em>Context:</em> the same bull attaches each note to a stated sense (“così intesa”, “so understood”). A proposition with an orthodox sense and a bad one is censured in the bad sense and receives a note to match, such as <em>captiosa</em> or <em>ambigua</em>. So Pius VI’s rule cuts both ways: it forbids excusing an ambiguous sentence by pointing to <em>Lumen Gentium</em> §14, and it forbids calling an ambiguous sentence heretical.</p>
+</blockquote>
+<h3 id="what-kind-of-document-this-is">What kind of document this is <a class="header-anchor" href="#what-kind-of-document-this-is">§</a></h3>
+<p><em>Nostra Aetate</em> closes with Paul VI’s formula, “Et Nos, Apostolica a Christo Nobis tradita potestate, illa, una cum Venerabilibus Patribus, in Spiritu Sancto approbamus, decernimus ac statuimus”, and Rome requires every Catholic to adhere to it as the teaching of the supreme magisterium (<em>The Case for Sedevacantism</em>, section 8.1). Its drafters said plainly what they meant it to be:</p>
+<blockquote>
+<p><strong>Secretariat for Christian Unity</strong>, report on the amended text, November 1964 (<em>Acta Synodalia</em> III/VIII, p. 644), and reply to amendment 2, October 1965 (<em>AS</em> IV/IV, p. 698):<br>
+“Quoad finem Declarationis, Secretariatus explicationem dogmaticam de religionibus non-christianis dare noluit, sed practicas et pastorales normas, in revelatione fundatas, ad agendum cum non-Christianis proponendas esse censuit.”<br>
+“Quidam Patres timent ne Declaratio in descriptione religionum nimio optimismo laboret. R. — Finis Declarationis ad id non tendit ut expositio completa religionum cum defectibus earum proponat; sed potius ut vinculum inter homines et religiones ostendat tamquam fundamentum dialogi et cooperationis.”<br>
+(“As to the aim of the Declaration, the Secretariat did not wish to give a dogmatic explanation of the non-Christian religions, but judged that practical and pastoral norms, founded in revelation, should be proposed for dealing with non-Christians.” “Some Fathers fear that the Declaration suffers from excessive optimism in describing the religions. Reply: The aim of the Declaration is not to set out a complete exposition of the religions with their defects, but rather to show the bond between men and religions as a foundation for dialogue and cooperation.” Author’s translation.)</p>
+</blockquote>
+<p>This is the defenders’ first answer to every charge below: the declaration describes, it does not define, and it does not set out to list defects. It is a real answer, and it is why no sentence is graded heretical. But it also describes a method. Pius XII had warned of it fifteen years earlier:</p>
+<blockquote>
+<p><strong>Pius XII</strong>, <em>Humani Generis</em> §11 (12 August 1950):<br>
+“There are many who, deploring disagreement among men and intellectual confusion, through an imprudent zeal for souls, are urged by a great and ardent desire to do away with the barrier that divides good and honest men; these advocate an “eirenism” according to which, <strong>by setting aside the questions which divide men</strong>, they aim not only at joining forces to repel the attacks of atheism, but also at reconciling things opposed to one another in the field of dogma.”</p>
+</blockquote>
+</section><section class="chapter"><h2 id="2-how-the-text-was-made">2. How the text was made <a class="header-anchor" href="#2-how-the-text-was-made">§</a></h2>
+<p>The declaration began in 1963 as a chapter of the schema on ecumenism, “On the attitude of Catholics to non-Christians and especially to the Jews”. In 1964 it became a declaration of its own, and it was rewritten three times before it was promulgated. The International Group of Fathers (<em>Coetus Internationalis Patrum</em>), the conservative minority, distributed a circular during the last session “convidando os Padres a votarem non placet em quase todas as votações parciais e no voto de conjunto” (“inviting the Fathers to vote non placet in almost all the partial votes and in the overall vote”; Roy-Lysencourt, <em>Horizonte</em> 13 [2015], p. 1073).</p>
+<p><strong>The votes</strong> (<em>Acta Synodalia</em>):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Vote</th>
+<th>Placet</th>
+<th>Non placet</th>
+<th>Iuxta modum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20 Nov 1964</td>
+<td>Whole draft (first version as a declaration)</td>
+<td>1,651</td>
+<td>99</td>
+<td>242</td>
+</tr>
+<tr>
+<td>14 Oct 1965</td>
+<td>Vote 400: the sentence that replaced “guilty of deicide” (4.12)</td>
+<td>1,875</td>
+<td>188</td>
+<td>—</td>
+</tr>
+<tr>
+<td>14 Oct 1965</td>
+<td>Vote 401: the Jews “neither rejected nor accursed” (4.13)</td>
+<td>1,821</td>
+<td>245</td>
+<td>—</td>
+</tr>
+<tr>
+<td>15 Oct 1965</td>
+<td>Whole schema</td>
+<td>1,763</td>
+<td>250</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>28 Oct 1965</strong></td>
+<td><strong>Final vote before promulgation</strong> (2,312 present)</td>
+<td><strong>2,221</strong></td>
+<td><strong>88</strong></td>
+<td>2 null, 1 other</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>What changed, and the reason the drafters gave</strong> (all from the <em>Acta</em>):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Point</th>
+<th>Earlier draft</th>
+<th>Final text</th>
+<th>Reason recorded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hope for the Jews</td>
+<td>Sept 1964: “Memoria insuper dignum est <strong>adunationem populi Iudaici cum Ecclesia partem spei christianae esse</strong>” (“It is worth remembering that the union of the Jewish people with the Church is part of Christian hope”, <em>AS</em> III/II 328)</td>
+<td>4.10: the Church “awaits that day, known to God alone, on which all peoples will address the Lord in a single voice”</td>
+<td>“Permulti enim Patres rogaverunt, ut in expressione huius spei, cum agatur de mysterio, <strong>vitetur quaevis species proselytismi</strong>” (“Very many Fathers asked that in expressing this hope, since it concerns a mystery, any appearance of proselytism be avoided”, <em>AS</em> III/VIII 648)</td>
+</tr>
+<tr>
+<td>“Deicide”</td>
+<td>1963: unjust to call the Jews “gens deicida”; Nov 1964: “numquam populus iudaicus ut gens reprobata vel maledicta <strong>aut deicidii rea</strong> exhibeatur”</td>
+<td>the word removed; 4.12 replaces the clause</td>
+<td>“Vox « deicidium », in quovis contextu, odiose sonat” (“The word ‘deicide’, in any context, sounds odious”, <em>AS</em> IV/IV 715–716). Some Fathers had feared the 1964 wording made it seem “ac si Ecclesia Catholica non amplius docere videretur, Illum qui pro nobis interfectus est revera esse Filium Dei” (“as if the Catholic Church no longer seemed to teach that He who was killed for us is truly the Son of God”); removing the word met that fear</td>
+</tr>
+<tr>
+<td>“Ray of truth”</td>
+<td>Nov 1964: the doctrines of other religions “referunt tamen radium illius Veritatis” (reflect a ray of the Truth), unqualified</td>
+<td>2.8: “<strong>haud raro</strong> referunt” (“not seldom reflect”)</td>
+<td>Amendment 32, “Addatur « haud raro referunt ». — Modus accipitur” (<em>AS</em> IV/IV 702). A restriction, to the drafters’ credit</td>
+</tr>
+<tr>
+<td>Idolatry</td>
+<td>—</td>
+<td>nothing</td>
+<td>A request to add “praesertim si ad idololatricum cultum pertinent” (“especially if they belong to idolatrous worship”) was refused “quia hic specialis condemnatio idololatriae non requiritur” (“because a special condemnation of idolatry is not required here”, amendment 33, <em>AS</em> IV/IV 702)</td>
+</tr>
+<tr>
+<td>Buddhism</td>
+<td>—</td>
+<td>2.5: “valeant” (present subjunctive)</td>
+<td>A request for “valerent” was refused “quia vox « valerent » esset forma irrealis; exprimendus vero est conatus positivus” (“because the word ‘valerent’ would be an unreal form; what must be expressed is a positive striving”, amendment 23, <em>AS</em> IV/IV 701)</td>
+</tr>
+<tr>
+<td>Catholic faith</td>
+<td>Nov 1964: dialogue “salva integritate fidei catholicae” (“with the integrity of the Catholic faith kept safe”)</td>
+<td>2.10: “fidem et vitam christianam testantes” (“bearing witness to the Christian faith and life”)</td>
+<td>Changed “ad exprimendam obligationem exercitii religionis catholicae” (“to express the obligation of practising the Catholic religion”, amendment 36)</td>
+</tr>
+<tr>
+<td>Romans 11:28</td>
+<td>—</td>
+<td>4.9 quotes only “most dear for the sake of the fathers”</td>
+<td>“pars ubi Iudaei « inimici » vocantur ad tempus Apostolorum refert … sed <strong>numquam ad posteriores generationes applicare potest</strong>” (“the part where the Jews are called ‘enemies’ refers to the time of the Apostles … but can never be applied to later generations”, amendment 71, <em>AS</em> IV/IV 709)</td>
+</tr>
+<tr>
+<td>Hatred of the Jews</td>
+<td>1963 and 1964: “deplorat <strong>et damnat</strong>”</td>
+<td>4.15: “deplorat”</td>
+<td>“In documento Conciliari melius videtur vocabula condemnationis ad res heresim formalem spectantes reservare” (“In a conciliar document it seems better to reserve words of condemnation for matters of formal heresy”, amendment 76, <em>AS</em> IV/IV 710)</td>
+</tr>
+<tr>
+<td>Muslims’ morality</td>
+<td>1964: they try to lead their moral life “tam individualem quam familialem et socialem” in obedience to God</td>
+<td>3.4: “vitam moralem aestimant” (“they value the moral life”)</td>
+<td>“Nam Muslimi in ethica familiali a nobis valde discrepare videntur” (“For the Muslims seem to differ greatly from us in family ethics”, <em>AS</em> IV/IV 704)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The drafters did not want to condemn: they reserved “condemnation” for heresy, declined to condemn idolatry, and refused even “damnat” for hatred of the Jews. They also restricted the text in places when the Fathers asked (“haud raro”, “in Semetipso”, the sentence on the Jews who opposed the Gospel). Both facts bear on the grades.</p>
+</section><section class="chapter"><h2 id="3-the-sentences">3. The sentences <a class="header-anchor" href="#3-the-sentences">§</a></h2>
+<p>Latin from <em>AAS</em> 58 (1966) 740–744; English from vatican.va unless marked “literal”. Sentence numbers are this page’s own (paragraph.sentence).</p>
+<h3 id="1-the-unity-of-mankind">§1: the unity of mankind <a class="header-anchor" href="#1-the-unity-of-mankind">§</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Latin (opening words)</th>
+<th>English</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td><em>Nostra aetate, in qua genus humanum in dies arctius unitur …</em></td>
+<td>In our time, when day by day mankind is being drawn closer together … the Church examines more closely her relationship to non-Christian religions.</td>
+<td>none</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td><em>In suo munere unitatem et caritatem … ea imprimis hic considerat quae hominibus sunt communia</em></td>
+<td>she considers above all in this declaration what men have in common and what draws them to fellowship.</td>
+<td>none (method; see section 1)</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td><em>Una enim communitas sunt omnes gentes, unam habent originem … unum etiam habent finem ultimum, Deum … donec uniantur electi in Civitate Sancta</em></td>
+<td>One is the community of all peoples, one their origin … One also is their final goal, God. His providence … His saving design extend to all men, until that time when the elect will be united in the Holy City</td>
+<td>none</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td><em>Homines a variis religionibus responsum exspectant de reconditis condicionis humanae aenigmatibus …</em></td>
+<td>Men expect from the various religions answers to the unsolved riddles of the human condition</td>
+<td>none</td>
+</tr>
+</tbody>
+</table></div>
+<p>1.3 rests on Acts 17:26 and 1 Timothy 2:4, and its last clause limits the final union to “the elect”. It is orthodox. Two refusals recorded at this point belong to the silences (section 4): a request to add to 1.3 that all men “have, after the common original fall, one Redeemer, Jesus Christ” was refused because the text means to show the roots of unity “in a more general way, which is to some extent accessible even to non-Christians” (amendment 7, <em>AS</em> IV/IV 699); and a request to add to 1.4 that the Christian religion gives the true and full answer was refused “quia hic non agitur de munere docendi Ecclesiae sed de communibus problematibus vitae humanae” (“because here it is not a question of the Church’s teaching office but of the common problems of human life”, amendment 13, <em>AS</em> IV/IV 700).</p>
+<h3 id="2-hindus-buddhists-and-other-religions">§2: Hindus, Buddhists and “other religions” <a class="header-anchor" href="#2-hindus-buddhists-and-other-religions">§</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Latin (opening words)</th>
+<th>English</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2.1</td>
+<td><em>Iam ab antiquo … invenitur quaedam perceptio illius arcanae virtutis … immo aliquando agnitio Summi Numinis vel etiam Patris.</em></td>
+<td>there is found among various peoples a certain perception of that hidden power … at times … a Supreme Being, or even of a Father.</td>
+<td>none (Rom 1:20)</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td><em>Quae perceptio atque agnitio vitam earum intimo sensu religioso penetrant.</em></td>
+<td>This perception and recognition penetrates their lives with a profound religious sense.</td>
+<td>none</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td><em>Religiones vero cum progressu culturae connexae …</em></td>
+<td>Religions … bound up with an advanced culture have struggled to answer the same questions</td>
+<td>none</td>
+</tr>
+<tr>
+<td>2.4</td>
+<td><em>Ita in Hinduismo homines mysterium divinum scrutantur et exprimunt inexhausta fecunditate mythorum …</em></td>
+<td>see below</td>
+<td><strong>offensive to pious ears</strong></td>
+</tr>
+<tr>
+<td>2.5</td>
+<td><em>In Buddhismo … via docetur qua homines … vel propriis conatibus vel superiore auxilio innixi, ad summam illuminationem pertingere valeant.</em></td>
+<td>see below</td>
+<td><strong>suspect of heresy</strong></td>
+</tr>
+<tr>
+<td>2.6</td>
+<td><em>Sic ceterae quoque religiones … inquietudini cordis hominum variis modis occurrere nituntur proponendo vias, doctrinas scilicet ac praecepta vitae, necnon ritus sacros.</em></td>
+<td>other religions … try to counter the restlessness of the human heart … by proposing “ways,” comprising teachings, rules of life, and sacred rites.</td>
+<td>none (“strive to meet” replaced “meet” in 1965, a restriction)</td>
+</tr>
+<tr>
+<td>2.7</td>
+<td><em>Ecclesia catholica nihil eorum, quae in his religionibus vera et sancta sunt, reicit.</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong></td>
+</tr>
+<tr>
+<td>2.8</td>
+<td><em>Sincera cum observantia considerat illos modos agendi et vivendi, illa praecepta et doctrinas …</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong></td>
+</tr>
+<tr>
+<td>2.9</td>
+<td><em>Annuntiat vero et annuntiare tenetur indesinenter Christum … in quo homines plenitudinem vitae religiosae inveniunt</em></td>
+<td>But she proclaims, and is bound ever to proclaim, Christ “the way, the truth, and the life” … in whom men find the fullness of religious life (literal)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>2.10</td>
+<td><em>Filios suos igitur hortatur, ut … illa bona spiritualia et moralia … agnoscant, servent et promoveant.</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h4>2.4 Hinduism: “the divine mystery” expressed in myths</h4>
+<blockquote>
+<p><em>Nostra Aetate</em> §2 (Latin and vatican.va English):<br>
+“Ita in Hinduismo homines mysterium divinum scrutantur et exprimunt inexhausta fecunditate mythorum et acutis conatibus philosophiae, atque liberationem quaerunt ab angustiis nostrae condicionis vel per formas vitae asceticae vel per profundam meditationem vel per refugium ad Deum cum amore et confidentia.”<br>
+“Thus in Hinduism, men contemplate the divine mystery and express it through an inexhaustible abundance of myths and through searching philosophical inquiry. They seek freedom from the anguish of our human condition either through ascetical practices or profound meditation or a flight to God with love and trust.”</p>
+<p><em>Context:</em> <em>scrutantur</em> means “search into”; the vatican.va English “contemplate” is a more devotional word than the Latin. When Fathers asked that <em>mythorum</em> be dropped, the Secretariat refused: “Terminus nil offensivi habet” (“The term has nothing offensive”, amendment 20, <em>AS</em> IV/IV 701). The three “vel” clauses were meant to distinguish different Hindu schools.</p>
+</blockquote>
+<p>Set against the Church’s own judgment of pagan worship:</p>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Psalm 95:5 (Vulgate and Douay-Rheims); Romans 1:22–23, 25; Good Friday, the solemn prayer for pagans (Roman Missal, 1962 form):<br>
+“quoniam omnes dii gentium daemonia; Dominus autem caelos fecit.” (“For all the gods of the Gentiles are devils: but the Lord made the heavens.”)<br>
+“For professing themselves to be wise, they became fools. And they changed the glory of the incorruptible God into the likeness of the image of a corruptible man … Who changed the truth of God into a lie; and worshipped and served the creature rather than the Creator”.<br>
+“Oremus et pro paganis: ut Deus omnipotens auferat iniquitatem a cordibus eorum; ut, relictis idolis suis, convertantur ad Deum vivum et verum, et unicum Filium ejus Jesum Christum … et l[i]bera eos ab idolorum cultura; et aggrega Ecclesiae tuae sanctae”. (“Let us pray also for the pagans: that almighty God would remove iniquity from their hearts: that, putting aside their idols, they may be converted to the true and living God, and His only Son, Jesus Christ … deliver them from the worship of idols: and join them to Thy holy Church”.)</p>
+<p><em>Context:</em> the Good Friday prayer was the Church’s public prayer in 1965, the year the declaration was voted. St Justin Martyr, the Father defenders cite for the “seeds of the Word”, says of the pagan myths that “they have been uttered by the influence of the wicked demons, to deceive and lead astray the human race” (<em>1 Apology</em> 54).</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §2, with the Secretariat’s refusal of amendment 33 (<em>AS</em> IV/IV 702):<br>
+“Thus in Hinduism, men contemplate the divine mystery and express it through an inexhaustible abundance of myths …”<br>
+A request to add “praesertim si ad idololatricum cultum pertinent” was refused “quia hic specialis condemnatio idololatriae non requiritur”.</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the Church prayed on Good Friday that the pagans be delivered “from the worship of idols”, and Scripture calls the gods of the nations devils and their myths a lie told about God. The Council says that in Hinduism men search into “the divine mystery” and “express it” in “an inexhaustible abundance of myths”, and it refused, when asked, to add a word about idolatry.</p>
+<p class="reply reply-objection"><strong>Objection:</strong> the sentence describes what Hindus do; it does not say the myths are true. St Paul granted the Athenians a real if confused seeking (“What therefore you worship, without knowing it, that I preach to you”, Acts 17:23). Pius XII told missionaries that the Church “has neither scorned nor rejected the pagan philosophies” (<em>Evangelii Praecones</em> §58). The “flight to God with love and trust” describes Hindu devotion (<em>bhakti</em>), which grace can touch.</p>
+<p class="reply reply-answer"><strong>Answer:</strong> granted that the sentence affirms no myth, and so it is not erroneous. But Pius XII spoke of pagan <em>philosophies</em>, freed “from error and all contamination”; he did not speak of a pagan religion’s myths as expressions of the divine mystery. Scripture and the liturgy speak of the same myths as a lie and an idolatry. To praise their “inexhaustible abundance” without a word on idolatry, after refusing the word, is what the <em>Catholic Encyclopedia</em> calls an expression that “rightly shock[s] the Catholic sense and delicacy of faith”.</p>
+<p><strong>Note:</strong> offensive to pious ears. An orthodox sense exists (a description of Hindu seeking), so the sentence is not erroneous.</p>
+<h4>2.5 Buddhism: “by their own efforts … supreme illumination”</h4>
+<blockquote>
+<p><em>Nostra Aetate</em> §2 (Latin, <em>AAS</em> 58 [1966] 741, and vatican.va English):<br>
+“In Buddhismo secundum varias eius formas radicalis insufficientia mundi huius mutabilis agnoscitur et via docetur qua homines, animo devoto et confidente, sive statum perfectae liberationis acquirere, sive, <strong>vel propriis conatibus vel superiore auxilio innixi, ad summam illuminationem pertingere valeant</strong>.”<br>
+“Again, Buddhism, in its various forms, realizes the radical insufficiency of this changeable world; it teaches a way by which men, in a devout and confident spirit, may be able either to acquire the state of perfect liberation, or attain, <strong>by their own efforts or through higher help, supreme illumination</strong>.”</p>
+<p><em>Context:</em> the Latin main verbs are impersonal passives: the insufficiency of the world “is acknowledged”, a way “is taught”, <em>in</em> Buddhism. The vatican.va English makes Buddhism an agent that “realizes”, a verb that concedes the insight is true. <em>valeant</em> is a present subjunctive in a relative clause: “a way by which men may be able”. The wording “by their own efforts or through higher help” was composed “post consultationem cum peritis tum christianis tum buddhistis” (“after consultation with experts, both Christian and Buddhist”) to cover the two main schools (amendment 22, <em>AS</em> IV/IV 701).</p>
+</blockquote>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Council of Trent, Session 6 (13 January 1547), canon 1 on justification (Tanner, Latin and English); Second Council of Orange (529), canon 7 (approved by Boniface II in 531):<br>
+“Si quis dixerit, hominem <strong>suis operibus, quae vel per humanae naturae vires</strong>, vel per legis doctrinam fiant, absque divina per Christum Iesum gratia posse iustificari coram Deo: a. s.” (“If anyone says that a person can be justified before God by his own works, done either by the resources of human nature or by the teaching of the law, apart from divine grace through Jesus Christ: let him be anathema.”)<br>
+“If anyone affirms that we can form any right opinion or make any right choice which relates to the salvation of eternal life, as is expedient for us, or that we can be saved, that is, assent to the preaching of the gospel through our natural powers <strong>without the illumination and inspiration of the Holy Spirit</strong> … he is led astray by a heretical spirit”.</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §2, with the Secretariat’s reply to amendment 23 (<em>AS</em> IV/IV 701):<br>
+“… it teaches a way by which men … may be able … [to] attain, by their own efforts or through higher help, supreme illumination.”<br>
+“Loco «valeant» dicatur «valerent». — Modus non accipitur, quia vox « valerent » esset forma irrealis; exprimendus vero est conatus positivus qui per coniunctivum praesentis exprimitur.” (“Amendment: instead of ‘valeant’ say ‘valerent’. — Not accepted, because the word ‘valerent’ would be an unreal form; what must be expressed is a positive striving, which is expressed by the present subjunctive.”)</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Trent anathematises the claim that man is justified “by his own works … by the resources of human nature” without grace, and Orange calls the claim that man can be saved without “the illumination … of the Holy Spirit” the work of “a heretical spirit”. The Council describes, without correction, a way by which men may reach “supreme illumination”, the final goal Buddhism proposes, “by their own efforts”. Asked to mark that way as unreal, the drafters refused, and said why: the Buddhist effort was to be presented as “a positive striving”.</p>
+<p class="reply reply-objection"><strong>Objection:</strong> the sentence is a report. “Is taught” (<em>docetur</em>) says what Buddhism teaches, not what the Church teaches; the Council no more affirms that Buddhist illumination is reached than a historian who writes “the Gnostics taught a way to salvation by knowledge” affirms Gnosticism. “Illumination” in Buddhism is not justification before God in Trent’s sense. And the sentence names the alternative “through higher help”.</p>
+<p class="reply reply-answer"><strong>Answer:</strong> the grammar is a real defence, and it is why this sentence is not graded heretical: it affirms nothing in the Council’s own voice, and Cartechini’s rule allows the note of heresy only where opposition to a defined truth is <em>certain</em>. But the defence does not reach the next note down. A council describing a religion’s way to its final end “by their own efforts”, in a passage whose declared purpose is esteem, without one word of the grace without which no one reaches God, gives “cause to fear” that its authors did not think the point needed making. The <em>Acta</em> turn that fear into a fact about the drafting: the drafters were asked to signal that the striving fails, and refused because they wanted it to appear positive. That is Cartechini’s “real foundation”, insufficient to judge the sentence heretical, sufficient to suspect it.</p>
+<p><strong>Note:</strong> suspect of heresy (<em>sapiens haeresim</em>), in the matter of Pelagianism. This is the highest note on the page. It is not a finding of heresy.</p>
+<h4>2.7–2.8 “True and holy”; “sincere regard” for other religions’ doctrines</h4>
+<blockquote>
+<p><em>Nostra Aetate</em> §2 (Latin and literal English):<br>
+“Ecclesia catholica nihil eorum, quae in his religionibus vera et sancta sunt, reicit. Sincera cum observantia considerat illos modos agendi et vivendi, illa praecepta et doctrinas, quae, quamvis ab iis quae ipsa tenet et proponit in multis discrepent, haud raro referunt tamen radium illius Veritatis, quae illuminat omnes homines.”<br>
+(“The Catholic Church rejects nothing of those things which are true and holy in these religions. With sincere regard she considers those ways of acting and living, those precepts and doctrines, which, although they differ in many things from those she holds and proposes, nevertheless not seldom reflect a ray of that Truth which enlightens all men.”)</p>
+<p><em>Context:</em> vatican.va renders <em>sincera observantia</em> as “sincere reverence”, which is stronger than the Latin (“regard”, “respect”). <em>haud raro</em> was added in 1965 as a restriction. The next sentence (2.9) opens with an adversative: “But she proclaims, and is bound ever to proclaim, Christ”.</p>
+</blockquote>
+<p>These sentences were already set against <em>Mortalium Animos</em> in <em>The Case for Sedevacantism</em> §4.5, which found that Pius XI’s condemnation of the opinion that all religions are “more or less good and praiseworthy” is not aimed at their wording. That holds. What remains is the ambiguity of two phrases.</p>
+<ul>
+<li><strong>“True and holy … in these religions.”</strong> Truth is God’s wherever found; St Thomas grants that Mahomet taught some truths (<em>vera quae docuit</em>, <em>Summa contra Gentiles</em> I.6). Holiness is harder. Whatever is holy in a non-Christian comes from grace working in the person, not from a false religion as such, whose worship Scripture calls offered “to devils, and not to God” (1 Corinthians 10:20). “Holy … in these religions” admits the first sense and suggests the second.</li>
+<li><strong>“Sincere regard” for “precepts and doctrines”.</strong> The objects of the Church’s regard here are the religions’ teachings and ways of life. 2.6 has just listed their “sacred rites” among those ways. St Thomas says “the rites of other unbelievers, which are neither truthful nor profitable are by no means to be tolerated”, except to avoid an evil (<em>Summa</em> II-II q.10 a.11). “Respect” for doctrines that “differ in many things” from the faith can mean respect for the truths in them, or for the doctrines as such.</li>
+</ul>
+<p>The critics’ strongest point is Amerio’s. The Council cites St John’s light that enlightens every man, he writes, “Pero el Concilio no menciona lo que según Juan Pablo II es un misterio paralelo al de la Encarnación: esa luz ha sido rechazada por los hombres. Por tanto es imposible que constituya el fondo de todas las religiones” (“But the Council does not mention what according to John Paul II is a mystery parallel to that of the Incarnation: that light has been rejected by men. So it is impossible that it should be the foundation of all religions”, <em>Iota Unum</em> §35.9). The Society of St Pius X, in its Profession of Faith of 24 June 2026 (art. 62), rejects “the idea that non-Christian religions might reflect a ray of truth which illumines every man”, and adds that “these religions taken as such, and insofar as they mingle error with their worship, are the work of the devil”.</p>
+<p class="reply reply-objection"><strong>Objection:</strong> the Church has always recognised partial truths among pagans: Justin’s “seeds of the Word” (<em>2 Apology</em> 13), Thomas on Mahomet’s <em>vera quae docuit</em>. 2.8 itself says the doctrines “differ in many things” from the Church’s, and 2.9 at once requires her to proclaim Christ.</p>
+<p class="reply reply-answer"><strong>Answer:</strong> granted, and this is why the note is no higher than ambiguous. But St Justin, who found seeds of the Word in the philosophers, called the pagan myths the work of “wicked demons” (<em>1 Apology</em> 54), and the declaration says nothing of that side. Rome later read 2.8 in its wider sense: in 1991, “the presence of positive values not only in the religious life of individual believers of other religious traditions, but also in the religious traditions to which they belong” (<em>Dialogue and Proclamation</em> §17), and in 2025, “all religions can reflect “a ray of that Truth which enlightens all men”” (Leo XIV; <em>The Case for Sedevacantism</em> §8.3). Pius VI’s rule applies: an ambiguity that later becomes the official reading is not cured by the orthodox sense it also admits.</p>
+<p><strong>Note:</strong> both sentences ambiguous.</p>
+<h4>2.10 “Recognise, preserve and promote” their spiritual goods</h4>
+<blockquote>
+<p><em>Nostra Aetate</em> §2 (Latin and vatican.va English):<br>
+“Filios suos igitur hortatur, ut cum prudentia et caritate per colloquia et collaborationem cum asseclis aliarum religionum, fidem et vitam christianam testantes, illa bona spiritualia et moralia necnon illos valores socio-culturales, quae apud eos inveniuntur, agnoscant, servent et promoveant.”<br>
+“The Church, therefore, exhorts her sons, that through dialogue and collaboration with the followers of other religions, carried out with prudence and love and in witness to the Christian faith and life, they recognize, preserve and promote the good things, spiritual and moral, as well as the socio-cultural values found among these men.”</p>
+<p><em>Context:</em> the object is the goods “found among them” (<em>apud eos</em>), not the religions themselves. The 1964 text had “salva integritate fidei catholicae” in place of “fidem et vitam christianam testantes”.</p>
+</blockquote>
+<p>The Church’s earlier rule for charity toward non-Catholics put the order of duties plainly:</p>
+<blockquote>
+<p><strong>Pius IX</strong>, <em>Quanto Conficiamur Moerore</em> §9 (10 August 1863):<br>
+“God forbid that the children of the Catholic Church should even in any way be unfriendly to those who are not at all united to us by the same bonds of faith and love. On the contrary, let them be eager always to attend to their needs with all the kind services of Christian charity … <strong>First of all, let them rescue them from the darkness of the errors into which they have unhappily fallen</strong> and strive to guide them back to Catholic truth”.</p>
+</blockquote>
+<p>The declaration’s exhortation has the charity and the collaboration, and the first duty Pius IX names is absent. To “preserve and promote” (<em>servent et promoveant</em>) the “spiritual goods” of the followers of other religions can mean protecting what is naturally good among them, as missionaries always did (<em>Evangelii Praecones</em> §56). It can also mean Catholics fostering the spiritual life the religions nourish, and that is how it was put into practice: the meetings of prayer at Assisi from 1986, and Leo XIV’s invitation in 2025 to the heads of the world religions “to pause for a moment in silent prayer” (<em>The Case for Sedevacantism</em> §§9.4, 9.7).</p>
+<p><strong>Note:</strong> ambiguous; dangerous as a rule of practice.</p>
+<h3 id="3-the-muslims">§3: the Muslims <a class="header-anchor" href="#3-the-muslims">§</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Latin (opening words)</th>
+<th>English</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.1</td>
+<td><em>Ecclesia cum aestimatione quoque Muslimos respicit qui unicum Deum adorant …</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong> (“fides islamica” ill-sounding)</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td><em>Iesum, quem quidem ut Deum non agnoscunt, ut prophetam tamen venerantur …</em></td>
+<td>Though they do not acknowledge Jesus as God, they revere Him as a prophet. They also honor Mary, His virgin Mother</td>
+<td>none (states their denial)</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td><em>Diem insuper iudicii expectant …</em></td>
+<td>they await the day of judgment</td>
+<td>none</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td><em>Exinde vitam moralem aestimant et Deum maxime in oratione, eleemosynis et ieiunio colunt.</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong></td>
+</tr>
+<tr>
+<td>3.5</td>
+<td><em>Quodsi in decursu saeculorum … praeterita obliviscentes …</em></td>
+<td>this sacred synod urges all to forget the past and to work sincerely for mutual understanding</td>
+<td>none (an exhortation)</td>
+</tr>
+</tbody>
+</table></div>
+<h4>3.1 and 3.4 Muslims “adore the one God” and “worship God”</h4>
+<blockquote>
+<p><em>Nostra Aetate</em> §3 (Latin and vatican.va English):<br>
+“Ecclesia cum aestimatione quoque Muslimos respicit qui unicum Deum adorant, viventem et subsistentem, misericordem et omnipotentem, Creatorem caeli et terrae, homines allocutum, cuius occultis etiam decretis toto animo se submittere student, sicut Deo se submisit Abraham ad quem fides islamica libenter sese refert.” … “Exinde vitam moralem aestimant et Deum maxime in oratione, eleemosynis et ieiunio colunt.”<br>
+“The Church regards with esteem also the Moslems. They adore the one God, living and subsisting in Himself; merciful and all- powerful, the Creator of heaven and earth, who has spoken to men; they take pains to submit wholeheartedly to even His inscrutable decrees, just as Abraham, with whom the faith of Islam takes pleasure in linking itself, submitted to God.” … “Finally, they value the moral life and worship God especially through prayer, almsgiving and fasting.”</p>
+<p><em>Context:</em> the Secretariat refused to restrict the Church’s esteem to the Muslims’ worship: “Hic enim Declaratio loqui incipit de religione stricte monotheistica erga quam iuste dicitur nos habere aestimationem” (“For here the Declaration begins to speak of a strictly monotheistic religion, towards which it is rightly said that we have esteem”, amendment 42, <em>AS</em> IV/IV 703–704). It also refused a request to add, after “mutual understanding”, “and finally … to the truth”, as leading to “aequivocationem” (amendment 53, <em>AS</em> IV/IV 705).</p>
+</blockquote>
+<p>The Council of Vienne, an ecumenical council, described the same worship in the opposite terms:</p>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Council of Vienne (1311–1312), decree 25 (Tanner, Latin and English):<br>
+“… sacerdotes eorum, Zabazala vulgariter nuncupati, in templis seu mesquitis suis, ad quae iidem Sarraceni conveniunt, <strong>ut ibidem adorent perfidum Machometum</strong>, diebus singulis certis horis in loco aliquo eminenti eiusdem Machometi nomen … alta voce invocant et extollunt … ne praefata invocatio seu professio nominis ipsius <strong>sacrilegi Machometi</strong> publice … audeat attentari”.<br>
+(Author’s translation, following Tanner: “their priests, commonly called Zabazala, in their temples or mosques, to which the Saracens gather <strong>in order to adore there the perfidious Mahomet</strong>, each day at certain hours loudly invoke and extol the name of the same Mahomet from a high place … that the aforesaid invocation or profession of the name of that <strong>sacrilegious Mahomet</strong> may not be publicly attempted”. Tanner’s English renders <em>perfidum</em> as “infidel”.)</p>
+<p><em>Context:</em> a disciplinary decree, forbidding the public call to prayer in Christian lands as “an insult to the holy name and a disgrace to the christian faith” (Tanner). It describes Muslim worship; it defines nothing about what Muslims believe of God. The Council of Basel (1434) likewise hoped for converts “from the abominable sect of Mahomet” (<em>nefanda Mahumeti secta</em>).</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §3 (28 October 1965):<br>
+“The Church regards with esteem also the Moslems. They adore the one God … they … worship God especially through prayer, almsgiving and fasting.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> one ecumenical council says the Saracens meet in their mosques “to adore the perfidious Mahomet”. Another says the Muslims “adore the one God” and “worship God” by their prayer and fasting, and extends the Church’s “esteem” to their religion as “strictly monotheistic”.</p>
+<p>The declaration’s own footnote sets up the second contradiction. For “Creator of heaven and earth” it cites a letter of St Gregory VII, and the letter says something the Council does not:</p>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · St Gregory VII, letter to Anzir, King of Mauretania (1076; PL 148, 450–451), cited in <em>Nostra Aetate</em> §3, note 5:<br>
+“Hanc itaque charitatem nos et vos specialibus nobis quam caeteris gentibus debemus, qui unum Deum, <strong>licet diverso modo</strong>, credimus et confitemur, qui eum Creatorem saeculorum et gubernatorem hujus mundi quotidie laudamus et veneramur.”<br>
+(“We and you owe this charity to each other more especially than to other peoples, since we believe and confess one God, <strong>albeit in a different way</strong>, and daily praise and venerate Him as Creator of the ages and Governor of this world.” Author’s translation.)</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §3 and <em>Lumen Gentium</em> §16 (Latin):<br>
+“qui unicum Deum adorant” (“who adore the one God”).<br>
+“Musulmanos, qui fidem Abrahae se tenere profitentes, <strong>nobiscum</strong> Deum adorant unicum, misericordem” (“the Muslims, who, professing to hold the faith of Abraham, adore <strong>with us</strong> the one and merciful God”).</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the pope the Council cites marked the difference in the very sentence: one God, “albeit in a different way”. The Council quotes his letter for the attributes and leaves out his qualifier, and <em>Lumen Gentium</em>, which <em>Nostra Aetate</em> §4 cites as its authority, puts <em>nobiscum</em>, “with us”, in its place.</p>
+<p class="reply reply-objection"><strong>Objection:</strong> the Council speaks of the <em>object</em> of Muslim worship, not its adequacy. There is only one God, the Creator; the Muslims mean Him and no other, though they know Him defectively, and 3.2 states at once that they deny Christ’s divinity. St Thomas grants that Mahomet taught some truths. Vienne’s “adore Mahomet” is a fourteenth-century description of the call to prayer, not a doctrinal judgment.</p>
+<p class="reply reply-answer"><strong>Answer:</strong> the defence holds against a charge of heresy, and <em>The Case for Sedevacantism</em> §8.3 accepts it: the Creed defines what the Catholic faith is, not that non-Christians intend no true God at all. But three things keep the sentence from being simply sound. It drops Gregory VII’s “different way” from the very letter it cites. It calls Islam a “faith” (<em>fides islamica</em>), a word the Church uses for the supernatural assent to God revealing, which Muslims refuse to the Son; that is an evil-sounding term in the <em>Catholic Encyclopedia</em>’s sense, “improper words … to express otherwise acceptable truths”. And it praises the worship of those of whom St John says “whosoever denieth the Son, the same hath not the Father” (1 John 2:23), without a word of that.</p>
+<p><strong>Note:</strong> ambiguous (3.1 and 3.4); the phrase “fides islamica” is evil-sounding.</p>
+<h3 id="4-the-jews">§4: the Jews <a class="header-anchor" href="#4-the-jews">§</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Latin (opening words)</th>
+<th>English</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.1</td>
+<td><em>Mysterium Ecclesiae perscrutans, Sacra haec Synodus meminit vinculi …</em></td>
+<td>it remembers the bond that spiritually ties the people of the New Covenant to Abraham’s stock</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td><em>Ecclesia enim Christi agnoscit fidei et electionis suae initia iam apud Patriarchas …</em></td>
+<td>the beginnings of her faith and her election are found already among the Patriarchs, Moses and the prophets</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td><em>Confitetur omnes Christifideles, Abrahae filios secundum fidem …</em></td>
+<td>all who believe in Christ — Abraham’s sons according to faith — are included in the same Patriarch’s call</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td><em>Quare nequit Ecclesia oblivisci se per populum illum … Revelationem Veteris Testamenti accepisse</em></td>
+<td>she received the revelation of the Old Testament through the people … the wild shoots, the Gentiles</td>
+<td>none (Rom 11:17–24)</td>
+</tr>
+<tr>
+<td>4.5</td>
+<td><em>Credit enim Ecclesia Christum … per crucem Iudaeos et Gentes reconciliasse et utraque in Semetipso fecisse unum.</em></td>
+<td>Christ … reconciled Jews and Gentiles, making both one in Himself</td>
+<td>none (“in Semetipso” added in 1965 “ut omnis ambiguitas tollatur”)</td>
+</tr>
+<tr>
+<td>4.6</td>
+<td><em>Semper quoque prae oculis habet … “quorum adoptio est filiorum …”</em></td>
+<td>theirs is the sonship and the glory and the covenants … (Rom 9:4–5)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.7</td>
+<td><em>Recordatur etiam ex populo iudaico natos esse Apostolos …</em></td>
+<td>the Apostles … sprang from the Jewish people</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.8</td>
+<td><em>Teste Sacra Scriptura, Ierusalem tempus visitationis suae non cognovit …</em></td>
+<td>Jerusalem did not recognize the time of her visitation, nor did the Jews in large number, accept the Gospel</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.9</td>
+<td><em>Nihilominus, secundum Apostolum, Iudaei Deo … adhuc carissimi manent propter Patres.</em></td>
+<td>see below</td>
+<td><strong>captious</strong></td>
+</tr>
+<tr>
+<td>4.10</td>
+<td><em>Una cum Prophetis eodemque Apostolo Ecclesia diem Deo soli notum expectat …</em></td>
+<td>the Church awaits that day, known to God alone, on which all peoples will address the Lord in a single voice</td>
+<td>none (but see section 4)</td>
+</tr>
+<tr>
+<td>4.11</td>
+<td><em>Cum igitur adeo magnum sit patrimonium spirituale Christianis et Iudaeis commune …</em></td>
+<td>this sacred synod wants to foster and recommend that mutual understanding and respect</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.12</td>
+<td><em>Etsi auctoritates Iudaeorum cum suis asseclis mortem Christi urserunt …</em></td>
+<td>see below</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.13</td>
+<td><em>Licet autem Ecclesia sit novus populus Dei, Iudaei tamen neque ut a Deo reprobati neque ut maledicti exhibeantur …</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong></td>
+</tr>
+<tr>
+<td>4.14</td>
+<td><em>Ideo curent omnes ne … quidquam doceant, quod cum veritate evangelica … non congruat.</em></td>
+<td>they do not teach anything that does not conform to the truth of the Gospel</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.15</td>
+<td><em>Praeterea, Ecclesia, quae omnes persecutiones in quosvis homines reprobat … deplorat.</em></td>
+<td>the Church … decries hatred, persecutions, displays of anti-Semitism, directed against Jews at any time and by anyone</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.16</td>
+<td><em>Ceterum Christus … propter peccata omnium hominum voluntarie passionem suam et mortem … obiit</em></td>
+<td>Christ underwent His passion and death freely, because of the sins of [all] men</td>
+<td>none</td>
+</tr>
+<tr>
+<td>4.17</td>
+<td><em>Ecclesiae praedicantis ergo est annuntiare crucem Christi …</em></td>
+<td>to proclaim the cross of Christ … as the fountain from which every grace flows</td>
+<td>none</td>
+</tr>
+</tbody>
+</table></div>
+<p>4.8 deserves credit: it was added in 1965 at the Fathers’ request, to express that “secundum fidem catholicam, populum iudaicum, post reiectionem Iesu ex parte Ierusalem et Synagogae, non amplius esse Ecclesiam Dei sicut fuit antea” (“according to the Catholic faith, the Jewish people, after the rejection of Jesus by Jerusalem and the Synagogue, is no longer the Church of God as it was before”, amendment 68, <em>AS</em> IV/IV 707–708). 4.15 deplores antisemitism, which the Holy Office had itself condemned in 1928 (“vel maxime damnat odium adversus populum olim a Deo electum”, <em>AAS</em> 20 [1928] 103–104), as St Bernard had forbidden persecution long before (“The Jews are not to be persecuted”, quoted by Benedict XIV, <em>A Quo Primum</em> §4). 4.16 is the Roman Catechism’s own teaching.</p>
+<h4>4.9 “Still most dear”: half a verse</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Romans 11:28–29; 1 Thessalonians 2:15–16 (Douay-Rheims and Vulgate); <em>Lumen Gentium</em> §16 (1964):<br>
+“As concerning the gospel, indeed, <strong>they are enemies for your sake</strong>: but as touching the election, they are most dear for the sake of the fathers. For the gifts and the calling of God are without repentance.”<br>
+“Who both killed the Lord Jesus, and the prophets, and have persecuted us, and please not God, and are adversaries to all men; Prohibiting us to speak to the Gentiles, that they may be saved, to fill up their sins always: for the wrath of God is come upon them to the end.” (Vulgate: “pervenit enim ira Dei super illos usque in finem.”)
+<em>Lumen Gentium</em> §16: “populus <strong>secundum electionem</strong> carissimus propter patres” (“a people most dear <strong>according to the election</strong> for the sake of the fathers”).</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §4, with the Secretariat’s reply to amendment 71 (<em>AS</em> IV/IV 709):<br>
+“Nihilominus, secundum Apostolum, Iudaei Deo, cuius dona et vocatio sine paenitentia sunt, <strong>adhuc carissimi manent</strong> propter Patres.” (“Nevertheless, according to the Apostle, the Jews <strong>still remain</strong> most dear to God, whose gifts and calling are without repentance, for the sake of the Fathers.” Literal; vatican.va drops “still”.)<br>
+“Non citatur totus versiculus quia pars ubi Iudaei « inimici » vocantur ad tempus Apostolorum refert quando multi Iudaei diffusioni Evangelii se opposuerunt, <strong>sed numquam ad posteriores generationes applicare potest</strong>; pars tamen ubi « carissimi » propter patres dicuntur pro omnibus saeculis etiam nostris temporibus valet”. (“The whole verse is not cited because the part where the Jews are called ‘enemies’ refers to the time of the Apostles, when many Jews opposed the spread of the Gospel, but can never be applied to later generations; the part, however, where they are called ‘most dear’ for the sake of the fathers holds for all ages, even our own times.”)</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> St Paul puts both halves in one verse: enemies as concerning the Gospel, most dear as touching the election. The Council quotes the second half, adds “still”, and drops “as touching the election”, which <em>Lumen Gentium</em> had kept a year earlier. The drafters say why: in their reading, “enemies” can “never” apply to any generation after the Apostles, while “most dear” holds “for all ages”. Two Fathers asked that the positive text not be cited if St Paul’s “the wrath of God is come upon them to the end” was left out; the request was refused (amendment 70, <em>AS</em> IV/IV 708).</p>
+<p class="reply reply-objection"><strong>Objection:</strong> every word of 4.9 is St Paul’s, and 4.8, just before it, records that the Jews in large part did not accept the Gospel and many opposed it; footnote 10 cites Romans 11:28 for exactly that. The Secretariat also said it did not intend to decide “quonam sensu populus iudaicus manet … «populus secundum electionem carissimus propter patres»” (“in what sense the Jewish people remains ‘a people most dear according to the election for the sake of the fathers’”, <em>AS</em> IV/IV 715).</p>
+<p class="reply reply-answer"><strong>Answer:</strong> the words are St Paul’s, which is why the sentence is not erroneous. The <em>Catholic Encyclopedia</em> defines the note that fits this case: a proposition is captious “when acceptable words are made to express objectionable thoughts”. The thought the drafters attached to the half-verse is on record. It restricts one half of a verse of Scripture to one generation and extends the other half to every age, against the plain sense of a verse that sets the two side by side. The Secretariat’s disclaimer about “in what sense” leaves that choice in place. Read with the <em>Acta</em>, the sentence uses St Paul’s words to say less than St Paul and to suggest something he did not say.</p>
+<p><strong>Note:</strong> captious, on the drafters’ own explanation. Read as the words alone stand, it would be ambiguous; <em>The Case for Sedevacantism</em> §8.3 records both grades.</p>
+<h4>4.12 “Not … the Jews of today”: why it draws no note</h4>
+<blockquote>
+<p><em>Nostra Aetate</em> §4 (vatican.va English):<br>
+“True, the Jewish authorities and those who followed their lead pressed for the death of Christ; still, what happened in His passion cannot be charged against all the Jews, without distinction, then alive, nor against the Jews of today.”</p>
+</blockquote>
+<p>Critics set Matthew 27:25 against it (“His blood be upon us and our children”), and Paul IV’s bull of 1555 calls the Jews those “quos propria culpa perpetuae servituti submisit” (“whom their own guilt has subjected to perpetual servitude”). Eight Fathers asked for the 1964 clause to be struck as “doctrina non certa, periculosa, contradicta in Evangelio” (amendment 80, <em>AS</em> IV/IV 712–713). But the sentence speaks of <em>imputing guilt</em> to every Jew without distinction, and the Church’s own catechism puts the guilt elsewhere:</p>
+<blockquote>
+<p><strong>Roman Catechism</strong> (1566), Part I, Article 4 (Donovan translation):<br>
+“In this guilt are involved all those who fall frequently into sin … This our guilt takes a deeper die of enormity when contrasted with that of the Jews: according to the testimony of the apostle, “if they had known it, they never would have crucified the Lord of Glory:” whilst we, on the contrary, professing to know him, yet denying him by our actions, seem, in some sort, to lay violent hands on him.”</p>
+</blockquote>
+<p>The tradition did speak of a penalty borne by the Jewish people (St Bernard, “the just penalties for so great a crime”), and the declaration is silent on it. Silence about a disputed penalty is not a denial of a doctrine. Personal guilt cannot be imputed to people who were not there, and the sentence names the authorities who “pressed for the death of Christ”. <strong>No note.</strong></p>
+<h4>4.13 “Neither rejected nor accursed”</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Matthew 21:43; Romans 11:15, 20 (Douay-Rheims and Vulgate); Innocent III, decretal <em>Etsi Judaeos</em>, quoted by Benedict XIV, <em>A Quo Primum</em> §5 (1751):<br>
+“Therefore I say to you, that the kingdom of God shall be taken from you, and shall be given to a nation yielding the fruits thereof.”<br>
+“For if the loss of them [<em>amissio eorum</em>] be the reconciliation of the world, what shall the receiving of them be, but life from the dead?” “Well: because of unbelief they were broken off.”<br>
+“Let not the sons of the free woman be servants of the sons of the handmaid; but <strong>as servants rejected by their lord</strong> for whose death they evilly conspired, let them realize that the result of this deed is to make them servants of those whom Christ’s death made free”.</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §4, with the Secretariat’s general principles for amending it (<em>AS</em> IV/IV 706, 715):<br>
+“Licet autem Ecclesia sit novus populus Dei, Iudaei tamen neque ut a Deo reprobati neque ut maledicti exhibeantur, quasi hoc ex Sacris Litteris sequatur.” (“Although the Church is the new people of God, the Jews should not be presented as rejected or accursed by God, as if this followed from the Holy Scriptures.”)<br>
+“Verum est ergo Israel iam non esse sacramentum salutis pro mundo. Hoc factum tamen non apte exprimitur per voces «reprobatus» vel «maledictus».” “Cavendum est ne condicio populi iudaici in oeconomia salutis post Christi mortem eadem videatur ac antea”. (“It is true, then, that Israel is no longer the sacrament of salvation for the world. But this fact is not fittingly expressed by the words ‘rejected’ or ‘accursed’.” “Care must be taken that the condition of the Jewish people in the economy of salvation after Christ’s death should not seem the same as before”.)</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Christ says the kingdom “shall be taken from you”; St Paul speaks of their “loss” or casting-away (<em>amissio</em>) and of branches “broken off”; Innocent III calls them “servants rejected by their lord”, and Benedict XIV quotes him with approval. The Council forbids presenting them as “rejected … by God, as if this followed from the Holy Scriptures”.</p>
+<p class="reply reply-objection"><strong>Objection:</strong> St Paul also says, in the same chapter, “Hath God cast away his people? God forbid … God hath not cast away his people, which he foreknew” (Romans 11:1–2). <em>Reprobatus</em> in theology means reprobation, God’s sentence of final rejection, which Scripture never pronounces on the Jewish people as a whole: “all Israel should be saved” (11:26). The sentence opens by calling the Church “the new people of God”, and its drafters said in writing that Israel “is no longer the sacrament of salvation for the world” and that its condition must not seem “the same as before”.</p>
+<p class="reply reply-answer"><strong>Answer:</strong> on the drafters’ sense the defence is complete, and that sense is orthodox: the opposite of 4.9. On the words alone, the sentence lets a reader take “not rejected” to mean that nothing changed, and that is how Rome’s commission read it in 2015: “A replacement or supersession theology which sets against one another two separate entities, a Church of the Gentiles and the rejected Synagogue whose place it takes, is deprived of its foundations” (<em>The Gifts and the Calling of God are Irrevocable</em> §17). The Society’s theologian Fr Gleize names this sentence as the point at which the traditional doctrine of substitution was “délaissée comme impossible” (<em>Courrier de Rome</em> no. 682, 2025). The fault is in the words’ openness, not in what their authors meant.</p>
+<p><strong>Note:</strong> ambiguous.</p>
+<h3 id="5-brotherhood-and-discrimination">§5: brotherhood and discrimination <a class="header-anchor" href="#5-brotherhood-and-discrimination">§</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Latin (opening words)</th>
+<th>English</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.1</td>
+<td><em>Nequimus vero Deum omnium Patrem invocare, si erga quosdam homines, ad imaginem Dei creatos, fraterne nos gerere renuimus.</em></td>
+<td>We cannot truly call on God, the Father of all, if we refuse to treat in a brotherly way any man, created as he is in the image of God.</td>
+<td>none</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td><em>Habitudo hominis ad Deum Patrem et habitudo hominis ad homines fratres adeo connectuntur …</em></td>
+<td>“He who does not love does not know God” (1 John 4:8).</td>
+<td>none</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td><em>Fundamentum ergo tollitur omni theoriae vel praxi quae … discrimen quoad humanam dignitatem et iura exinde dimanantia inducit.</em></td>
+<td>No foundation therefore remains for any theory or practice that leads to discrimination … so far as their human dignity and the rights flowing from it are concerned.</td>
+<td>none</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td><em>Ecclesia igitur quamvis hominum discriminationem aut vexationem stirpis vel coloris, condicionis vel religionis causa factam … reprobat.</em></td>
+<td>see below</td>
+<td><strong>ambiguous</strong></td>
+</tr>
+<tr>
+<td>5.5</td>
+<td><em>Proinde, Christifideles Sacra Synodus … ardenter obsecrat …</em></td>
+<td>this sacred synod ardently implores the Christian faithful … to live for their part in peace with all men</td>
+<td>none (vatican.va’s “On the contrary” mistranslates <em>Proinde</em>, “accordingly”)</td>
+</tr>
+</tbody>
+</table></div>
+<p>5.1 rests on creation in God’s image, and Scripture calls God “Father of all” in that sense (Ephesians 4:6; Malachi 2:10, “Have we not all one father? hath not one God created us?”). Pius XII taught the same: “Even when they abandoned their Creator, God did not cease to regard them as His children” (<em>Summi Pontificatus</em> §36). St Pius X condemned a brotherhood founded “beyond all philosophies and religions, on the mere notion of humanity” (<em>Notre Charge Apostolique</em>, 1910); 5.1 founds it on creation and on 1 John 4:8, though a request to ground it on faith in “Deo revelanti in Christo” was refused “quia ad argumentum non pertinere videtur” (amendment 87, <em>AS</em> IV/IV 717). <strong>No note.</strong></p>
+<h4>5.4 Discrimination “because of religion”</h4>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius IX, <em>Syllabus of Errors</em> (1864), propositions 77–78 (condemned):<br>
+“77. In the present day it is no longer expedient that the Catholic religion should be held as the only religion of the State, to the exclusion of all other forms of worship.”<br>
+“78. Hence it has been wisely decided by law, in some Catholic countries, that persons coming to reside therein shall enjoy the public exercise of their own peculiar worship.”</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · <em>Nostra Aetate</em> §5 (Latin and vatican.va English):<br>
+“Ecclesia igitur quamvis hominum discriminationem aut vexationem stirpis vel coloris, condicionis vel <strong>religionis causa</strong> factam tamquam a Christi mente alienam, reprobat.”<br>
+“The Church reproves, as foreign to the mind of Christ, any discrimination against men or harassment of them because of their race, color, condition of life, or <strong>religion</strong>.”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> a Catholic State that kept the Catholic religion “the only religion of the State, to the exclusion of all other forms of worship”, as the <em>Syllabus</em> requires, distinguished between its subjects “because of religion”. The Council reproves “any discrimination … because of … religion” as “foreign to the mind of Christ”.</p>
+<p class="reply reply-objection"><strong>Objection:</strong> <em>discriminatio aut vexatio</em> means unjust treatment of persons: harassment, contempt, denial of what is owed to them as men. The Church always forbade that. Pius IX himself wrote: “God forbid that the children of the Catholic Church should even in any way be unfriendly to those who are not at all united to us” (<em>Quanto Conficiamur</em> §9), and Leo XIII that “the Church is wont to take earnest heed that no one shall be forced to embrace the Catholic faith against his will” (<em>Immortale Dei</em> §36). The sentence says nothing about the State.</p>
+<p class="reply reply-answer"><strong>Answer:</strong> that orthodox sense is real, and <em>The Case for Sedevacantism</em> §8.2 draws no charge against §5 on race and condition. But the word “religion” opens a second sense, and six weeks later the same Council and the same Pope fixed it: <em>Dignitatis Humanae</em> (7 December 1965) declared a natural right to religious freedom, to be recognised “in the constitutional law whereby society is governed” (<em>The Case for Sedevacantism</em> §3). Read with that document, “discrimination … because of religion” includes the Catholic State’s preference for the true religion.</p>
+<p><strong>Note:</strong> ambiguous.</p>
+</section><section class="chapter"><h2 id="4-the-silences">4. The silences <a class="header-anchor" href="#4-the-silences">§</a></h2>
+<p>A council is not required to say everything in every document, and the defenders are right that <em>Nostra Aetate</em> set out to show “the bond between men and religions”, not their defects. But these silences were asked about, discussed and chosen. Each is recorded in the <em>Acta</em>.</p>
+<ol>
+<li><strong>No condemnation of idolatry.</strong> Refused “because a special condemnation of idolatry is not required here” (amendment 33).</li>
+<li><strong>No statement that Christianity answers the questions the religions ask.</strong> Refused “because here it is not a question of the Church’s teaching office but of the common problems of human life” (amendment 13).</li>
+<li><strong>No mention of the one Redeemer in the account of mankind’s unity.</strong> Refused so that the text would be “to some extent accessible even to non-Christians” (amendment 7).</li>
+<li><strong>No hope for the conversion of the Jews.</strong> The Sept 1964 sentence, “the union of the Jewish people with the Church is part of Christian hope”, was struck so that “any appearance of proselytism” would be avoided (<em>AS</em> III/VIII 648). Until 1965 the Church prayed every Good Friday “ut et ipsi agnoscant Jesum Christum Dominum nostrum” (“that they too may acknowledge Jesus Christ our Lord”). Romans 11:25–26 survives only inside footnote 12.</li>
+<li><strong>Half of Romans 11:28, and none of 1 Thessalonians 2:16.</strong> Both requested; both refused (amendments 70–71).</li>
+<li><strong>No call to the truth for Muslims.</strong> Adding “and finally … to the truth” after “mutual understanding” was refused as leading to “equivocation” (amendment 53).</li>
+<li><strong>No condemnation even of what the text deplores.</strong> “Damnat” was removed from the sentence on hatred of the Jews, because “words of condemnation” were to be reserved “for matters of formal heresy” (amendment 76).</li>
+<li><strong>The vocabulary.</strong> In the Latin text of the declaration the following words do not occur at all: <em>error</em>, <em>falsus</em>, <em>idolum</em>, <em>conversio</em>, <em>baptismus</em>, <em>Trinitas</em>, <em>supernaturalis</em>. The Holy Ghost is named only in Paul VI’s promulgation formula. “Salvation” (<em>salus</em>) appears only of God’s saving design (1.3, 4.2), of the Church (4.3), and of Christ’s death “that all may reach salvation” (4.16); the declaration never says what men must do to be saved.</li>
+</ol>
+<p>Romano Amerio drew the conclusion that “El naturalismo que caracteriza los dos documentos, Ad gentes y Nostra aetate, es patente incluso en la terminología, al no aparecer jamás el vocablo sobrenatural” (“The naturalism that characterises the two documents, <em>Ad Gentes</em> and <em>Nostra Aetate</em>, is evident even in the terminology, since the word supernatural never appears”, <em>Iota Unum</em> §35.9). Silence is not denial, and no silence counts toward the heresy count. But it is the method Pius XII described in 1950: “setting aside the questions which divide men” (<em>Humani Generis</em> §11).</p>
+</section><section class="chapter"><h2 id="5-what-rome-made-of-it">5. What Rome made of it <a class="header-anchor" href="#5-what-rome-made-of-it">§</a></h2>
+<p><em>Humani Generis</em> foresaw the next step: “Theories that today are put forward rather covertly by some, not without cautions and distinctions, tomorrow are openly and without moderation proclaimed by others more audacious” (§13). Three official readings of <em>Nostra Aetate</em> go beyond its words. Rome itself says the most famous of them is not in the text: “the covenant that God made with his people Israel perdures and is never invalidated. Although this statement is true, it cannot be explicitly read into ‘Nostra aetate’ (No.4)” (<em>The Gifts and the Calling</em> §39, 2015).</p>
+<h3 id="salvation-in-the-sincere-practice-of-what-is-good-in-their-own-religious-traditions">Salvation “in the sincere practice of what is good in their own religious traditions” <a class="header-anchor" href="#salvation-in-the-sincere-practice-of-what-is-good-in-their-own-religious-traditions">§</a></h3>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Pius IX, <em>Syllabus of Errors</em> (1864), proposition 16 (condemned); allocution <em>Singulari Quadam</em> (9 December 1854; Denzinger 1646):<br>
+“16. Man may, in the observance of any religion whatever, find the way of eternal salvation, and arrive at eternal salvation.”<br>
+“… opinionem illam impiam aeque ac funestam ab hominum mente propulsetis, nimirum quavis in religione reperiri posse aeternae salutis viam.” (“to drive from the minds of men that impious and equally fatal opinion, namely, that the way of eternal salvation can be found in any religion whatsoever.”)</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Pontifical Council for Interreligious Dialogue and Congregation for the Evangelization of Peoples, <em>Dialogue and Proclamation</em> §29 (19 May 1991); John Paul II, General Audience, 9 September 1998 §3:<br>
+“Concretely, <strong>it will be in the sincere practice of what is good in their own religious traditions</strong> and by following the dictates of their conscience that the members of other religions respond positively to God’s invitation and receive salvation in Jesus Christ, even while they do not recognize or acknowledge him as their saviour”.<br>
+John Paul II: “<strong>Normally</strong>, “it will be in the sincere practice of what is good in their own religious traditions and by following the dictates of their own conscience that the members of other religions respond positively to God’s invitation and receive salvation in Jesus Christ …””</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Pius IX condemned the opinion that “the way of eternal salvation can be found in any religion whatsoever”. Rome in 1991, and John Paul II in 1998 with the word “Normally”, taught that members of other religions receive salvation “in the sincere practice of what is good in their own religious traditions”. Archbishop Lefebvre put the traditional distinction in one line: “They are saved in their religion but not by it” (<em>Open Letter to Confused Catholics</em>, ch. 10).</p>
+<p><strong>Weight:</strong> the 1991 text keeps “in Jesus Christ” and “what is good”, and <em>Dominus Iesus</em> (2000) later added that “it would be contrary to the faith to consider the Church as one way of salvation alongside those constituted by the other religions” (§21). So the condemned proposition is not repeated word for word. But “normally” makes the practice of a non-Christian religion the ordinary path by which its members are saved. That is closer to <em>Syllabus</em> 16 than to any sentence of <em>Nostra Aetate</em>.</p>
+<h3 id="the-jews-salvation-without-confessing-christ-explicitly-and-no-mission">The Jews: salvation “without confessing Christ explicitly”, and no mission <a class="header-anchor" href="#the-jews-salvation-without-confessing-christ-explicitly-and-no-mission">§</a></h3>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Council of Florence, <em>Cantate Domino</em> (4 February 1442), Tanner translation:<br>
+“It firmly believes, professes and preaches that all those who are outside the catholic church, not only pagans but also <strong>Jews</strong> or heretics and schismatics, cannot share in eternal life and will go into the everlasting fire which was prepared for the devil and his angels, <strong>unless they are joined to the catholic church before the end of their lives</strong>”.</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Commission for Religious Relations with the Jews, <em>The Gifts and the Calling of God are Irrevocable</em> §§36, 40 (10 December 2015); Francis, <em>Evangelii Gaudium</em> §247 (2013):<br>
+“That the Jews are participants in God’s salvation is <strong>theologically unquestionable</strong>, but how that can be possible without confessing Christ explicitly, is and remains an unfathomable divine mystery.” “In concrete terms this means that <strong>the Catholic Church neither conducts nor supports any specific institutional mission work directed towards Jews</strong>.”<br>
+Francis: “As Christians, we cannot consider Judaism as a foreign religion; <strong>nor do we include the Jews among those called to turn from idols and to serve the true God</strong> (cf. 1 Thes 1:9).”</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> Florence names the Jews among those who “cannot share in eternal life … unless they are joined to the catholic church”. The 2015 document calls their share in salvation “theologically unquestionable” without explicit faith in Christ, and renounces any organised mission to them. The claimant’s exhortation exempts them from the call St Paul addressed to the Thessalonians.</p>
+<p><strong>Weight:</strong> the 2015 text calls itself “not a magisterial document or doctrinal teaching of the Catholic Church”, and it insists elsewhere that “there cannot be two ways of salvation” (§37). Florence’s “joined to the catholic church” was later understood to include union by implicit desire (Holy Office to Archbishop Cushing, 1949), so “without confessing Christ explicitly” does not by itself contradict it. What does is the certainty: Florence teaches that those outside are lost unless joined to the Church; the commission calls it “unquestionable” that the Jews, as such, share in salvation. <em>Evangelii Gaudium</em> is a papal exhortation, not a definition, but it is the claimant’s own teaching.</p>
+<h3 id="once-chosen-and-remains-a-chosen-people">“Once chosen” and “remains a chosen people” <a class="header-anchor" href="#once-chosen-and-remains-a-chosen-people">§</a></h3>
+<div class="pair"><blockquote class="pre">
+<p><strong>Before</strong> · Holy Office, decree suppressing the association <em>Amici Israel</em> (25 March 1928; <em>AAS</em> 20 [1928] 103–104):<br>
+“Ecclesia enim catholica pro populo iudaico, qui divinarum usque ad Iesum Christum promissionum depositarius fuit, non obstante subsequente eius obcaecatione, immo huius ipsius obcaecationis causa, semper orare consuevit. … ita vel maxime damnat odium adversus <strong>populum olim a Deo electum</strong>”.<br>
+(“For the Catholic Church has always been accustomed to pray for the Jewish people, who were the depositary of the divine promises <strong>up to Jesus Christ</strong>, notwithstanding their subsequent blindness, indeed because of that very blindness. … so it especially condemns hatred against <strong>the people once chosen by God</strong>.” Author’s translation.)</p>
+</blockquote><blockquote class="post">
+<p><strong>After</strong> · Commission for Religious Relations with the Jews, <em>Notes on the correct way to present the Jews and Judaism in preaching and catechesis</em> VI.1 (1985):<br>
+“We must in any case <strong>rid ourselves of the traditional idea of a people punished</strong>, preserved as a living argument for Christian apologetic. <strong>It remains a chosen people</strong>, “the pure olive on which were grafted the branches of the wild olive which are the gentiles””.</p>
+</blockquote></div><p class="verdict"><strong>The contradiction:</strong> the same Holy Office that condemned antisemitism in 1928 called the Jews depositaries of the promises “up to Jesus Christ” and “the people <em>once</em> chosen by God”, and suppressed an association whose way of speaking departed “from the sense of the Church, the mind of the Fathers and the sacred Liturgy”. In 1985 Rome told preachers to “rid ourselves of the traditional idea” and to teach that “it remains a chosen people”.</p>
+<p><strong>Weight:</strong> the <em>Notes</em> are an instruction for preaching, issued by a Vatican commission, not a doctrinal definition. The contradiction is between two Roman acts of similar rank, and the later one calls the earlier view “traditional”.</p>
+</section><section class="chapter"><h2 id="6-what-the-critics-say">6. What the critics say <a class="header-anchor" href="#6-what-the-critics-say">§</a></h2>
+<p>The heresy count on this page is lower than some critics give. Their charges, and why the grades differ:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Critic</th>
+<th>Sentence attacked</th>
+<th>Charge claimed</th>
+<th>Grade here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Most Holy Family Monastery (Dimond brothers, 2007)</td>
+<td>2.5 Buddhism</td>
+<td>“This is apostasy. This is one of the worst heresies in Vatican II.”</td>
+<td>suspect of heresy: the sentence reports what Buddhism teaches (<em>docetur</em>)</td>
+</tr>
+<tr>
+<td>Most Holy Family Monastery</td>
+<td>4.13 not rejected</td>
+<td>“Nostra Aetate #4 teaches the heresy that the Jews should not be considered as rejected by God.”</td>
+<td>ambiguous: Romans 11:1–2 “God hath not cast away his people”</td>
+</tr>
+<tr>
+<td>Most Holy Family Monastery</td>
+<td>3.1 Muslims</td>
+<td>“similar to … the heresy that we have already exposed in Lumen Gentium”</td>
+<td>ambiguous</td>
+</tr>
+<tr>
+<td>CMRI (Bp Mark Pivarunas)</td>
+<td>2.4, 2.5, 2.7–2.10, 3.1</td>
+<td>“The primary doctrinal error of this false council is religious indifferentism”; “Here we find the apostasy from the Catholic Church to the Conciliar Church of Vatican II!”; elsewhere, “heretical principles”</td>
+<td>offensive, suspect, ambiguous</td>
+</tr>
+<tr>
+<td>Novus Ordo Watch (2025)</td>
+<td>whole document</td>
+<td>“this apostatical declaration”</td>
+<td>(no sentence-level analysis)</td>
+</tr>
+<tr>
+<td>J. Weiskittel (<em>Sacerdotium</em>)</td>
+<td>1.3, 2.8, 2.4</td>
+<td>“implicit repudiation of Catholic doctrine”; the Hindu “flight toward God”, “An enormity!”</td>
+<td>1.3 none; 2.8 ambiguous; 2.4 offensive</td>
+</tr>
+<tr>
+<td>SSPX, Profession of Faith (2026), art. 62</td>
+<td>2.8 “ray of truth”</td>
+<td>rejected as a modern error; no technical censure</td>
+<td>ambiguous</td>
+</tr>
+<tr>
+<td>J. Vennari (SSPX, 2013)</td>
+<td>4.13</td>
+<td>“deliberate ambiguities and crucial omissions”</td>
+<td>ambiguous; silences (section 4)</td>
+</tr>
+<tr>
+<td>Fr J.-M. Gleize (SSPX, 2025)</td>
+<td>4.13</td>
+<td>“nouveaux principes”; the start of a near-total “révision” of tradition</td>
+<td>ambiguous</td>
+</tr>
+<tr>
+<td>R. Amerio, <em>Iota Unum</em></td>
+<td>2.8; the whole</td>
+<td>naturalism, omission; “temerario y erróneo” only of the <em>Osservatore Romano</em>’s 1972 reading</td>
+<td>ambiguous; silences</td>
+</tr>
+</tbody>
+</table></div>
+<p>The only published critic found who calls particular sentences heresy is the Dimonds’ monastery. Two of their three charges fail on the text: the Buddhism sentence affirms nothing in the Council’s voice, and St Paul himself says God has not cast away his people. (Amerio, for his part, says wrongly that the declaration omits the Muslims’ denial of Christ’s divinity; 3.2 states it.) The SSPX writers and Amerio, who read the text most closely, charge ambiguity, omission and new principles, not heresy. That is where the evidence points.</p>
+</section><section class="chapter"><h2 id="7-the-count-and-what-it-proves">7. The count, and what it proves <a class="header-anchor" href="#7-the-count-and-what-it-proves">§</a></h2>
+<p><strong>Heresies:</strong> none. No sentence of <em>Nostra Aetate</em>, read in its Latin as it stands, certainly contradicts a defined dogma, and Cartechini allows the note of heresy only where the opposition is certain.</p>
+<p><strong>Other notes:</strong> ten sentences.</p>
+<ul>
+<li>1 suspect of heresy: the Buddhism sentence (2.5), on the drafters’ deliberate refusal to mark the “own efforts” way as unreal.</li>
+<li>1 captious: the Jews “still remain most dear” (4.9), on the drafters’ restriction of St Paul’s “enemies” to one generation.</li>
+<li>1 offensive to pious ears: the Hindu myths that “express the divine mystery” (2.4).</li>
+<li>7 ambiguous: “true and holy” (2.7), “sincere regard” for other religions’ doctrines (2.8), “promote” their spiritual goods (2.10), Muslims “adore” and “worship” the one God (3.1, 3.4), the Jews “not rejected” (4.13), discrimination “because of religion” (5.4).</li>
+</ul>
+<p><strong>Silences:</strong> eight, each chosen and recorded (section 4).</p>
+<p><strong>Contradictions:</strong> ten.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Earlier text</th>
+<th>Later text</th>
+<th>What kind</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Psalm 95:5; Good Friday prayer for pagans</td>
+<td>2.4 Hindu myths</td>
+<td>Scripture and liturgy against description</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Trent Sess. 6 can. 1; Orange can. 7</td>
+<td>2.5 Buddhism</td>
+<td>the nearest approach to defined dogma; saved by grammar</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Council of Vienne, decree 25</td>
+<td>3.1, 3.4 Muslims “adore the one God”</td>
+<td>conciliar language, not dogma</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Gregory VII, “licet diverso modo” (the Council’s own footnote)</td>
+<td>3.1 and <em>Lumen Gentium</em> §16 “nobiscum”</td>
+<td>qualifier of the cited source dropped</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Romans 11:28; 1 Thessalonians 2:16; <em>Lumen Gentium</em> §16</td>
+<td>4.9 “still most dear”</td>
+<td>selective use of Scripture</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Matthew 21:43; Romans 11:15, 20; Innocent III</td>
+<td>4.13 “not rejected”</td>
+<td>Scripture’s words against the text’s words; orthodox in the drafters’ sense</td>
+</tr>
+<tr>
+<td>7</td>
+<td><em>Syllabus</em> 77–78</td>
+<td>5.4 “because of religion”</td>
+<td>ambiguous; fixed by <em>Dignitatis Humanae</em></td>
+</tr>
+<tr>
+<td>8</td>
+<td><em>Syllabus</em> 16; <em>Singulari Quadam</em></td>
+<td><em>Dialogue and Proclamation</em> §29; John Paul II 1998</td>
+<td>Rome’s reading</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Florence, <em>Cantate Domino</em></td>
+<td>2015 Commission §§36, 40; <em>Evangelii Gaudium</em> §247</td>
+<td>Rome’s reading</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Holy Office 1928, “olim electum”</td>
+<td>1985 <em>Notes</em> VI.1, “remains a chosen people”</td>
+<td>Rome’s reading</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>What this proves.</strong> <em>Nostra Aetate</em> does not, by itself, prove that the authority that promulgated it lacked the Church’s authority, because it contains no certain contradiction of a defined dogma. What it shows is a method and a direction: a text written to say only what unites, that refused to name idolatry, error or conversion when asked, whose most suspect sentences were made so on purpose, and whose openings were taken up by Rome’s later teaching in the sense the Church had condemned. That is the weight <em>The Case for Sedevacantism</em> gives it in section 8: the declaration is evidence of direction, and the strict case against union with the Council rests on what Rome requires every Catholic to accept, above all <em>Dignitatis Humanae</em>.</p>
+</section><section class="chapter"><h2 id="sources">Sources <a class="header-anchor" href="#sources">§</a></h2>
+<p>The declaration:</p>
+<ul>
+<li><em>Nostra Aetate</em>, Latin (with the promulgation formula): <a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_lt.html">https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_lt.html</a></li>
+<li><em>Nostra Aetate</em>, English: <a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html">https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html</a></li>
+<li>Official text, <em>AAS</em> 58 (1966) 740–744: <a href="https://www.vatican.va/archive/aas/documents/AAS-58-1966-ocr.pdf">https://www.vatican.va/archive/aas/documents/AAS-58-1966-ocr.pdf</a></li>
+<li><em>Acta Synodalia Sacrosancti Concilii Oecumenici Vaticani II</em>, vols. II/V (1963 text), III/II (Sept 1964 text), III/VIII (Nov 1964 text, report and votes), IV/IV (1965 amendments, Bea’s report, votes of 14–15 Oct 1965), IV/V (final vote): <a href="https://archive.org/details/ASII.5">https://archive.org/details/ASII.5</a>, <a href="https://archive.org/details/ASIII.2">https://archive.org/details/ASIII.2</a>, <a href="https://archive.org/details/ASIII.8">https://archive.org/details/ASIII.8</a>, <a href="https://archive.org/details/ASIV.4">https://archive.org/details/ASIV.4</a>, <a href="https://archive.org/details/ASIV.5">https://archive.org/details/ASIV.5</a></li>
+<li>Ph. Roy-Lysencourt, “O Coetus Internationalis Patrum no Concílio Vaticano II”, <em>Horizonte</em> 13/38 (2015) 1051–1079: https://www.pliniocorreadeoliveira.info/TD_2015_Philippe_Roy_Lysencourt_O_Coetus_Internalis_CV2.pdf</li>
+<li><em>Lumen Gentium</em> §16, Latin: <a href="https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_lt.html">https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_lt.html</a></li>
+</ul>
+<p>The scale and the method:</p>
+<ul>
+<li><em>Catholic Encyclopedia</em>, “Theological Censures”: <a href="https://www.newadvent.org/cathen/03532a.htm">https://www.newadvent.org/cathen/03532a.htm</a></li>
+<li>S. Cartechini, <em>De valore notarum theologicarum</em> (Rome 1951): https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/4a.%20Positive%20Theology/de%20Traditione/d-De%20Valore%20Notarum%20Theologicarum-%20Cartechini%20SJ_OCR.pdf</li>
+<li>Pius VI, <em>Auctorem Fidei</em> (Italian): <a href="http://www.vatican.va/content/pius-vi/it/documents/bolla-auctorem-fidei-28-agosto-1794.html">http://www.vatican.va/content/pius-vi/it/documents/bolla-auctorem-fidei-28-agosto-1794.html</a></li>
+<li>Pius XII, <em>Humani Generis</em>: <a href="https://www.papalencyclicals.net/pius12/p12human.htm">https://www.papalencyclicals.net/pius12/p12human.htm</a></li>
+</ul>
+<p>Earlier teaching, Scripture and liturgy:</p>
+<ul>
+<li>Council of Trent, Session 6 (English): <a href="https://www.papalencyclicals.net/councils/trent/sixth-session.htm">https://www.papalencyclicals.net/councils/trent/sixth-session.htm</a>; Latin in Tanner vol. 2, p. 679</li>
+<li>Second Council of Orange (529): <a href="https://www.ewtn.com/catholicism/library/local-council-history-and-text-1472">https://www.ewtn.com/catholicism/library/local-council-history-and-text-1472</a></li>
+<li>Council of Vienne, decree 25: <a href="https://www.papalencyclicals.net/councils/ecum15.htm">https://www.papalencyclicals.net/councils/ecum15.htm</a>; Latin in Tanner vol. 1, p. 380</li>
+<li>Council of Florence, <em>Cantate Domino</em>: <a href="https://www.papalencyclicals.net/councils/ecum17.htm">https://www.papalencyclicals.net/councils/ecum17.htm</a></li>
+<li>St Gregory VII to Anzir, PL 148, 450–451: <a href="https://archive.org/details/patrologiaecurs02unkngoog">https://archive.org/details/patrologiaecurs02unkngoog</a></li>
+<li>St Thomas, <em>Summa contra Gentiles</em> I.6: https://isidore.co/aquinas/ContraGentiles1.htm; <em>Summa Theologiae</em> II-II q.10 a.11: <a href="https://www.newadvent.org/summa/3010.htm">https://www.newadvent.org/summa/3010.htm</a></li>
+<li>St Justin Martyr, <em>1 Apology</em> 54: <a href="https://www.newadvent.org/fathers/0126.htm">https://www.newadvent.org/fathers/0126.htm</a></li>
+<li>Roman Catechism, Part I, Art. 4: <a href="https://en.wikisource.org/wiki/The_Catechism_of_the_Council_of_Trent/Part_1:_Article_4">https://en.wikisource.org/wiki/The_Catechism_of_the_Council_of_Trent/Part_1:_Article_4</a></li>
+<li>Benedict XIV, <em>A Quo Primum</em>: <a href="https://www.papalencyclicals.net/ben14/b14aquo.htm">https://www.papalencyclicals.net/ben14/b14aquo.htm</a></li>
+<li>Paul IV, <em>Cum nimis absurdum</em>: <a href="https://la.wikisource.org/wiki/Cum_nimis_absurdum">https://la.wikisource.org/wiki/Cum_nimis_absurdum</a></li>
+<li>Pius IX, <em>Syllabus of Errors</em>: <a href="https://www.papalencyclicals.net/pius09/p9syll.htm">https://www.papalencyclicals.net/pius09/p9syll.htm</a>; <em>Quanto Conficiamur Moerore</em>: <a href="https://www.papalencyclicals.net/pius09/p9quanto.htm">https://www.papalencyclicals.net/pius09/p9quanto.htm</a>; <em>Singulari Quadam</em> (Denzinger 1646–1648): <a href="https://www.ldysinger.com/@magist/1865_pius9/1854_Singulari_quadam_salv_invinc_ign.htm">https://www.ldysinger.com/@magist/1865_pius9/1854_Singulari_quadam_salv_invinc_ign.htm</a></li>
+<li>Leo XIII, <em>Immortale Dei</em>: <a href="https://www.papalencyclicals.net/leo13/l13sta.htm">https://www.papalencyclicals.net/leo13/l13sta.htm</a></li>
+<li>St Pius X, <em>Notre Charge Apostolique</em>: <a href="https://www.papalencyclicals.net/pius10/p10notre.htm">https://www.papalencyclicals.net/pius10/p10notre.htm</a></li>
+<li>Holy Office, decree on <em>Amici Israel</em>, <em>AAS</em> 20 (1928) 103–104: <a href="https://www.vatican.va/archive/aas/documents/AAS-20-1928-ocr.pdf">https://www.vatican.va/archive/aas/documents/AAS-20-1928-ocr.pdf</a></li>
+<li>Pius XII, <em>Summi Pontificatus</em>: <a href="https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20101939_summi-pontificatus.html">https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_20101939_summi-pontificatus.html</a>; <em>Evangelii Praecones</em>: <a href="https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_02061951_evangelii-praecones.html">https://www.vatican.va/content/pius-xii/en/encyclicals/documents/hf_p-xii_enc_02061951_evangelii-praecones.html</a></li>
+<li>Good Friday prayers for pagans (1962 form): <a href="http://www.omm.org/documents/liturgy/holy-week/presanctified-2.html">http://www.omm.org/documents/liturgy/holy-week/presanctified-2.html</a></li>
+<li>Douay-Rheims and Vulgate: https://www.drbo.org (Psalm 95; Matthew 21, 27; Romans 1, 11; 1 Corinthians 10; Ephesians 4; 1 Thessalonians 2; 1 John 2)</li>
+</ul>
+<p>After the Council:</p>
+<ul>
+<li><em>Dialogue and Proclamation</em> (1991): <a href="https://www.vatican.va/roman_curia/pontifical_councils/interelg/documents/rc_pc_interelg_doc_19051991_dialogue-and-proclamatio_en.html">https://www.vatican.va/roman_curia/pontifical_councils/interelg/documents/rc_pc_interelg_doc_19051991_dialogue-and-proclamatio_en.html</a></li>
+<li>John Paul II, General Audience, 9 September 1998: <a href="https://www.vatican.va/content/john-paul-ii/en/audiences/1998/documents/hf_jp-ii_aud_09091998.html">https://www.vatican.va/content/john-paul-ii/en/audiences/1998/documents/hf_jp-ii_aud_09091998.html</a></li>
+<li>CDF, <em>Dominus Iesus</em> (2000): <a href="https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html">https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_20000806_dominus-iesus_en.html</a></li>
+<li>Commission for Religious Relations with the Jews, <em>Notes</em> (1985) and <em>The Gifts and the Calling of God are Irrevocable</em> (2015): <a href="https://www.christianunity.va/content/unitacristiani/en/commissione-per-i-rapporti-religiosi-con-l-ebraismo/commissione-per-i-rapporti-religiosi-con-l-ebraismo-crre/documenti-della-commissione.html">https://www.christianunity.va/content/unitacristiani/en/commissione-per-i-rapporti-religiosi-con-l-ebraismo/commissione-per-i-rapporti-religiosi-con-l-ebraismo-crre/documenti-della-commissione.html</a></li>
+<li>Francis, <em>Evangelii Gaudium</em>: <a href="https://www.vatican.va/content/francesco/en/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html">https://www.vatican.va/content/francesco/en/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html</a></li>
+</ul>
+<p>Critics:</p>
+<ul>
+<li>Most Holy Family Monastery, “Nostra Aetate – Vatican II’s Decree on Non-Christian Religions” (2007): <a href="https://vaticancatholic.com/nostra-aetate">https://vaticancatholic.com/nostra-aetate</a></li>
+<li>Bp M. Pivarunas, CMRI, “The Doctrinal Errors of the Second Vatican Council”: <a href="http://web.archive.org/web/20260201000924/https://cmri.org/articles-on-the-traditional-catholic-faith/the-doctrinal-errors-of-the-second-vatican-council/">http://web.archive.org/web/20260201000924/https://cmri.org/articles-on-the-traditional-catholic-faith/the-doctrinal-errors-of-the-second-vatican-council/</a></li>
+<li>Novus Ordo Watch, “Sixty Years of Vatican II’s Declaration on Non-Christian Religions” (2025): <a href="https://novusordowatch.org/2025/10/sixty-years-of-nostra-aetate/">https://novusordowatch.org/2025/10/sixty-years-of-nostra-aetate/</a></li>
+<li>J. Weiskittel, “Wojtyla Gets a Third Eye”: <a href="https://novusordowatch.org/wojtyla-gets-third-eye-weiskittel">https://novusordowatch.org/wojtyla-gets-third-eye-weiskittel</a></li>
+<li>SSPX, <em>Profession of Catholic Faith</em> (2026): https://fsspx.news/sites/default/files/documents/profession_of_catholic_faith_en.pdf</li>
+<li>J. Vennari, “Judaism and the Church: before and after Vatican II”: <a href="https://sspx.org/en/news/judaism-church-after-vatican-ii-4622">https://sspx.org/en/news/judaism-church-after-vatican-ii-4622</a></li>
+<li>J.-M. Gleize, “De Nostra Aetate à Benoît XVI : l’impossible dualité”, <em>Courrier de Rome</em> no. 682 (2025): <a href="https://courrierderome.org/de-nostra-aetate-a-benoit-xvi-limpossible-dualite">https://courrierderome.org/de-nostra-aetate-a-benoit-xvi-limpossible-dualite</a></li>
+<li>R. Amerio, <em>Iota Unum</em> (Spanish ed. 2011), §§35.9–35.10: <a href="https://ia601503.us.archive.org/2/items/HistoriadoresII/Iota%20Unum%20de%20Romano%20Amerio%20-%20Estudio%20sobre%20las%20transformaciones%20en%20la%20Iglesia%20en%20el%20siglo%20xx.pdf">https://ia601503.us.archive.org/2/items/HistoriadoresII/Iota%20Unum%20de%20Romano%20Amerio%20-%20Estudio%20sobre%20las%20transformaciones%20en%20la%20Iglesia%20en%20el%20siglo%20xx.pdf</a></li>
+<li>Abp M. Lefebvre, <em>Open Letter to Confused Catholics</em>, ch. 10: <a href="https://www.fisheaters.com/srpdf/anopenlettertoconfusedcatholics.pdf">https://www.fisheaters.com/srpdf/anopenlettertoconfusedcatholics.pdf</a></li>
+</ul>
+</section>
+    <footer>A companion to section 8 of <a href="index.html">The Case for Sedevacantism</a>. Built from <code>nostra-aetate.md</code>.</footer>
+  </div>
+</main>
+<button class="to-top" aria-label="Back to top">↑</button>
+<script>
+(() => {
+  const root = document.documentElement;
+  const stored = localStorage.getItem("theme");
+  if (stored) root.dataset.theme = stored;
+  document.querySelector(".theme-btn").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    localStorage.setItem("theme", root.dataset.theme);
+  });
+
+  const body = document.body;
+  document.querySelector(".menu-btn").addEventListener("click", () => body.classList.toggle("nav-open"));
+  document.querySelectorAll(".toc a").forEach(a => a.addEventListener("click", () => body.classList.remove("nav-open")));
+
+  const toTop = document.querySelector(".to-top");
+  toTop.addEventListener("click", () => scrollTo({ top: 0 }));
+  addEventListener("scroll", () => toTop.classList.toggle("show", scrollY > 800), { passive: true });
+
+  // Scrollspy.
+  const links = new Map([...document.querySelectorAll(".toc a")].map(a => [a.getAttribute("href").slice(1), a]));
+  const heads = [...document.querySelectorAll("h2[id], h3[id]")];
+  let current = null;
+  const spy = new IntersectionObserver(entries => {
+    for (const e of entries) if (e.isIntersecting) {
+      current?.classList.remove("active");
+      current = links.get(e.target.id);
+      current?.classList.add("active");
+      current?.scrollIntoView({ block: "nearest" });
+    }
+  }, { rootMargin: "0px 0px -75% 0px" });
+  heads.forEach(h => spy.observe(h));
+
+  // Search: highlight matches and jump to the first.
+  const content = document.querySelector(".content");
+  const input = document.querySelector(".search");
+  const noHits = document.querySelector(".no-hits");
+  const clear = () => content.querySelectorAll("mark").forEach(m => m.replaceWith(...m.childNodes));
+  let timer;
+  input.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      clear(); content.normalize();
+      const q = input.value.trim();
+      noHits.style.display = "none";
+      if (q.length < 3) return;
+      const re = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, {
+        acceptNode: n => n.parentElement.closest("script,style,mark") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+      });
+      const nodes = [];
+      while (walker.nextNode()) if (re.test(walker.currentNode.data)) nodes.push(walker.currentNode);
+      let first = null;
+      for (const node of nodes) {
+        const frag = document.createDocumentFragment();
+        let last = 0;
+        node.data.replace(re, (m, i) => {
+          frag.append(node.data.slice(last, i));
+          const mark = document.createElement("mark"); mark.textContent = m; frag.append(mark);
+          first ??= mark; last = i + m.length;
+        });
+        frag.append(node.data.slice(last));
+        node.replaceWith(frag);
+      }
+      if (first) first.scrollIntoView({ block: "center" }); else noHits.style.display = "block";
+    }, 250);
+  });
+  input.addEventListener("keydown", e => { if (e.key === "Escape") { input.value = ""; clear(); content.normalize(); } });
+})();
+</script>
+</body>
+</html>
